@@ -1,0 +1,58 @@
+# Core WordPress
+wp-config.php
+wp-content/upgrade/
+wp-content/uploads/*
+!wp-content/uploads/.htaccess
+!wp-content/uploads/index.php
+
+# Theme Specific - Adjust based on your theme's structure
+node_modules/
+bower_components/
+assets/css/*.map
+assets/js/*.map
+build/
+composer.lock
+vendor/
+.sass-cache/
+package-lock.json
+yarn.lock
+
+# IDE and Editor Specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.komodoedit
+*.project
+.tern-project
+.c9/
+*.tmproj
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Log Files
+*.log
+
+# Temporary Files
+*.tmp
+*.swp
+*.swo
+._*
+
+# Deployment Specific (adjust as needed)
+.env
+.deploy/
+capistrano/
+config/deploy.rb
+
+# Ignore compressed files if you generate them locally
+*.zip
+*.rar
+*.gz
+*.tar.gz
+
+# Ignore any local development files
+local-config.php
+debug.log
