@@ -345,4 +345,130 @@ function display_recent_blog_posts() {
 	endif;
 }
 
+/* begin theme color */
+function my_theme_customize_register( $wp_customize ) {
+    // Add a new section for theme colors if it doesn't exist
+    if ( ! $wp_customize->get_section( 'colors' ) ) {
+        $wp_customize->add_section( 'colors', array(
+            'title'    => __( 'Colors', 'your-theme-slug' ),
+            'priority' => 30,
+        ) );
+    }
 
+    // Background Color
+    $wp_customize->add_setting( 'background_color', array(
+        'default'           => '#fdfdfd',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_color', array(
+        'label'    => __( 'Background Color', 'your-theme-slug' ),
+        'section'  => 'colors',
+        'settings' => 'background_color',
+    ) ) );
+
+    // Text Color
+    $wp_customize->add_setting( 'text_color', array(
+        'default'           => '#222222',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_color', array(
+        'label'    => __( 'Text Color', 'your-theme-slug' ),
+        'section'  => 'colors',
+        'settings' => 'text_color',
+    ) ) );
+
+    // Additional Color 1
+    $wp_customize->add_setting( 'accent_color_1', array(
+        'default'           => '#f8b705',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color_1', array(
+        'label'    => __( 'Accent Color 1', 'your-theme-slug' ),
+        'section'  => 'colors',
+        'settings' => 'accent_color_1',
+    ) ) );
+
+    // Additional Color 2
+    $wp_customize->add_setting( 'accent_color_2', array(
+        'default'           => '#131a48',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color_2', array(
+        'label'    => __( 'Accent Color 2', 'your-theme-slug' ),
+        'section'  => 'colors',
+        'settings' => 'accent_color_2',
+    ) ) );
+
+    // Additional Color 3
+    $wp_customize->add_setting( 'accent_color_3', array(
+        'default'           => '#FF6120',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color_3', array(
+        'label'    => __( 'Accent Color 3', 'your-theme-slug' ),
+        'section'  => 'colors',
+        'settings' => 'accent_color_3',
+    ) ) );
+
+    // Additional Color 4
+    $wp_customize->add_setting( 'accent_color_4', array(
+        'default'           => '#00a6a6',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color_4', array(
+        'label'    => __( 'Accent Color 4', 'your-theme-slug' ),
+        'section'  => 'colors',
+        'settings' => 'accent_color_4',
+    ) ) );
+}
+add_action( 'customize_register', 'my_theme_customize_register' );
+
+// Output CSS in the <head> for live preview
+function my_theme_customize_preview_js() {
+    wp_enqueue_script( 'my-theme-customize-preview', get_stylesheet_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '1.0', true );
+}
+add_action( 'customize_preview_init', 'my_theme_customize_preview_js' );
+
+// Output CSS in the <head> for front-end styling
+function my_theme_customize_css() {
+    $background_color = get_theme_mod( 'background_color', '#fdfdfd' );
+    $text_color       = get_theme_mod( 'text_color', '#222222' );
+    $accent_color_1   = get_theme_mod( 'accent_color_1', '#f8b705' );
+    $accent_color_2   = get_theme_mod( 'accent_color_2', '#131a48' );
+    $accent_color_3   = get_theme_mod( 'accent_color_3', '#FF6120' );
+    $accent_color_4   = get_theme_mod( 'accent_color_4', '#00a6a6' );
+    ?>
+    <style type="text/css">
+        body {
+            background-color: <?php echo esc_attr( $background_color ); ?>;
+            color: <?php echo esc_attr( $text_color ); ?>;
+        }
+        a {
+            color: <?php echo esc_attr( $accent_color_1 ); ?>;
+        }
+        /* Add more CSS rules to use your additional colors */
+        .accent-1 {
+            color: <?php echo esc_attr( $accent_color_1 ); ?>;
+        }
+        .bg-accent-2 {
+            background-color: <?php echo esc_attr( $accent_color_2 ); ?>;
+            color: white; /* Example text color on this background */
+        }
+        .border-accent-3 {
+            border-color: <?php echo esc_attr( $accent_color_3 ); ?>;
+        }
+        .highlight-4 {
+            background-color: <?php echo esc_attr( $accent_color_4 ); ?>;
+        }
+        /* You'll need to define specific CSS rules to apply these colors to your theme's elements */
+    </style>
+    <?php
+}
+add_action( 'wp_head', 'my_theme_customize_css' );
+/* end theme color */

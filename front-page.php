@@ -38,9 +38,9 @@ if ( $contact_page ) {
             <picture>
                 <?php
                 $upload_dir = wp_get_upload_dir();
-                $mobile_url = trailingslashit( $upload_dir['baseurl'] ) . '/2025/04/home-hero-sm.jpg';
-                $desktop_url = trailingslashit( $upload_dir['baseurl'] ) . '/2025/04/home-hero-lg.jpg';
-                $fallback_url = trailingslashit( $upload_dir['baseurl'] ) . '/2025/04/home-hero-lg.jpg';
+                $mobile_url = trailingslashit( $upload_dir['baseurl'] ) . '2025/04/hero-graphic-sm.svg';
+                $desktop_url = trailingslashit( $upload_dir['baseurl'] ) . '2025/04/hero-graphic-lg.svg';
+                $fallback_url = trailingslashit( $upload_dir['baseurl'] ) . '2025/04/hero-graphic-lg.svg';
                 ?>
                 <source media="(max-width: 767px)" srcset="<?php echo esc_url( $mobile_url ); ?>">
                 <source srcset="<?php echo esc_url( $desktop_url ); ?>">
