@@ -23,11 +23,48 @@
 		<?php endif; ?>
 	</header> -->
 
-	<?php en_portfolio_site_post_thumbnail(); ?>
+	<!-- <?php en_portfolio_site_post_thumbnail(); ?> -->
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
+
+	<?php
+	$post_type = get_post_type();
+	if ( $post_type === 'projects' ) {
+		echo '<span class="post-type-label">Type: Project</span>';
+
+		// Get categories for the 'projects' custom post type
+		$categories = get_the_terms( get_the_ID(), 'project_category' ); // Assuming 'project_category' is your taxonomy
+
+		if ( $categories && ! is_wp_error( $categories ) ) {
+			echo '<div class="project-categories-list">';
+			echo '<span>Categories:</span>';
+			echo '<ul>';
+			foreach ( $categories as $category ) {
+				echo '<li><a href="' . esc_url( get_term_link( $category ) ) . '">' . esc_html( $category->name ) . '</a></li>';
+			}
+			echo '</ul>';
+			echo '</div>';
+		}
+	} elseif ( $post_type === 'post' ) {
+		echo '<span class="post-type-label">Type: Blog</span>';
+
+		// Get categories for standard blog posts
+		$categories = get_the_category();
+
+		if ( $categories && ! is_wp_error( $categories ) ) {
+			echo '<div class="blog-categories-list">';
+			echo '<span>Categories:</span>';
+			echo '<ul>';
+			foreach ( $categories as $category ) {
+				echo '<li><a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a></li>';
+			}
+			echo '</ul>';
+			echo '</div>';
+		}
+	}
+	?>
 
 	<footer class="entry-footer">
 		<?php en_portfolio_site_entry_footer(); ?>

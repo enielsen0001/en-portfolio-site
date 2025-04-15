@@ -10,7 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<p>this?</p>
 	<!-- <header class="entry-header">
 		<?php
 		if ( is_singular() ) :

@@ -16,7 +16,6 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<p>page.php</p>
 
 		<?php include( get_template_directory() . '/template-parts/page-headline.php' ); ?>
 
@@ -29,8 +28,16 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+
+		<?php if ( ! is_page( 'contact' ) && ! is_page( 'privacy-policy' ) ) {
+			include( get_template_directory() . '/template-parts/contact-cta.php' );
+		} else {
+			echo '<span class="footer-divider"></span>';
+		}
+		?>
+
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

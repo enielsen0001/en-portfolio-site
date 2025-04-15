@@ -41,8 +41,9 @@
 		</div>
         <div class="footer-bottom">
             <p class="footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
-            <p class="footer-to-top"><a href="#top">Back to Top</a></p>
+            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         </div>
+		<p class="footer-to-top"><a href="#top">Back to Top</a></p>
     </div>
 </footer>
 
