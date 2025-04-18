@@ -1,0 +1,12 @@
+@use 'vars-mixins';
+
+// header ------------------------------
+.custom-logo-link {
+    display: block;
+    width: 80px;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}

@@ -18,7 +18,7 @@ if ( $contact_page ) {
 ?>
 
 	<main id="primary" class="site-main">
-        <p>front-page.php</p>
+
         <div class="home-hero">
 
             <div class="content-width">

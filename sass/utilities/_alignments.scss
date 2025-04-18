@@ -1,3 +1,4 @@
+@use '../base/vars-mixins' as vars;
 .alignleft {
 
 	/*rtl:ignore*/
@@ -21,7 +22,7 @@
 .aligncenter {
 	clear: both;
 
-	@include center-block;
+	@include vars.center-block;
 
 	margin-bottom: 1.5em;
 }

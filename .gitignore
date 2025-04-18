@@ -56,3 +56,5 @@ config/deploy.rb
 # Ignore any local development files
 local-config.php
 debug.log
+style.css.map
+style.map

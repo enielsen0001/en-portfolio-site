@@ -1,0 +1,76 @@
+@import 'sass:math'; // Import the Sass math module
+
+$grid-columns: 12; // Number of columns in the grid
+$gap: 20px; // Default gap between columns (can be overridden)
+
+// Container Mixin (for wrapping rows)
+@mixin make-container($gutter: $gap) {
+  width: 100%;
+  padding-right: calc($gutter / 2); // Use the provided gap
+  padding-left: calc($gutter / 2);  // or the default
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Row Mixin
+@mixin make-row($gutter: $gap) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc($gutter / -2);
+  margin-left: calc($gutter / -2);
+}
+
+// Column Mixin
+@mixin make-col($columns: false, $gutter: $gap) {
+  position: relative;
+  width: 100%;
+  padding-right: calc($gutter / 2);
+  padding-left: calc($gutter / 2);
+  flex: 0 0 auto;
+
+  @if $columns {
+    flex-basis: percentage($columns / $grid-columns);
+    max-width: percentage($columns / $grid-columns);
+  } @else {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}
+
+// Generate CSS
+
+.container {
+  @include make-container();
+}
+.container-fluid{
+   @include make-container(0px);
+}
+
+.row {
+  @include make-row();
+}
+
+@each $breakpoint, $value in $grid-breakpoints {
+  @if ($value == 0) {
+    .col {
+      @include make-col();
+    }
+    @for $i from 1 through $grid-columns {
+      .col-#{$i} {
+        @include make-col($i);
+      }
+    }
+  } @else {
+    @media (min-width: $value) {
+      .col-#{$breakpoint} {
+        @include make-col();
+      }
+      @for $i from 1 through $grid-columns {
+        .col-#{$breakpoint}-#{$i} {
+          @include make-col($i);
+        }
+      }
+    }
+  }
+}

@@ -48,6 +48,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/* SCSS HEX */
+:root {
+  /* CSS HEX */
+  --text-color: #222222;
+  --neutral-background: #f9f9f9;
+  --theme-color-1: #f8b705;
+  --theme-color-2: #131a48;
+  --theme-color-3: #ff6120;
+  --theme-color-4: #00a6a6;
+}
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -60,7 +71,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-/* line 11, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -71,7 +81,6 @@ html {
 /**
  * Remove the margin in all browsers.
  */
-/* line 23, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 body {
   margin: 0;
 }
@@ -79,7 +88,6 @@ body {
 /**
  * Render the `main` element consistently in IE.
  */
-/* line 31, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 main {
   display: block;
 }
@@ -88,7 +96,6 @@ main {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-/* line 40, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -100,7 +107,6 @@ h1 {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 53, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 hr {
   box-sizing: content-box;
   height: 0;
@@ -111,7 +117,6 @@ hr {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 64, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 pre {
   font-family: monospace, monospace;
   font-size: 1em;
@@ -122,7 +127,6 @@ pre {
 /**
  * Remove the gray background on active links in IE 10.
  */
-/* line 76, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 a {
   background-color: transparent;
 }
@@ -131,7 +135,6 @@ a {
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 85, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
@@ -141,7 +144,6 @@ abbr[title] {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 95, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 b,
 strong {
   font-weight: bolder;
@@ -151,7 +153,6 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 105, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 code,
 kbd,
 samp {
@@ -162,7 +163,6 @@ samp {
 /**
  * Add the correct font size in all browsers.
  */
-/* line 116, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 small {
   font-size: 80%;
 }
@@ -171,7 +171,6 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-/* line 125, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -180,12 +179,10 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 133, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 137, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 sup {
   top: -0.5em;
 }
@@ -195,7 +192,6 @@ sup {
 /**
  * Remove the border on images inside links in IE 10.
  */
-/* line 148, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 img {
   border-style: none;
 }
@@ -206,7 +202,6 @@ img {
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
  */
-/* line 160, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 button,
 input,
 optgroup,
@@ -222,7 +217,6 @@ textarea {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-/* line 176, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 button,
 input {
   overflow: visible;
@@ -232,7 +226,6 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-/* line 186, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 button,
 select {
   text-transform: none;
@@ -241,22 +234,20 @@ select {
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-/* line 195, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 206, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -264,18 +255,16 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 218, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
 /**
  * Correct the padding in Firefox.
  */
-/* line 229, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
@@ -286,7 +275,6 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *		`fieldset` elements in all browsers.
  */
-/* line 240, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 legend {
   box-sizing: border-box;
   color: inherit;
@@ -299,7 +287,6 @@ legend {
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-/* line 253, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 progress {
   vertical-align: baseline;
 }
@@ -307,7 +294,6 @@ progress {
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
-/* line 261, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 textarea {
   overflow: auto;
 }
@@ -316,9 +302,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-/* line 270, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -326,9 +311,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-/* line 280, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -336,8 +320,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-/* line 290, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -345,8 +328,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-/* line 299, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -354,7 +336,6 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-/* line 308, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
@@ -365,7 +346,6 @@ textarea {
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
-/* line 320, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 details {
   display: block;
 }
@@ -373,7 +353,6 @@ details {
 /*
  * Add the correct display in all browsers.
  */
-/* line 328, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 summary {
   display: list-item;
 }
@@ -383,7 +362,6 @@ summary {
 /**
  * Add the correct display in IE 10+.
  */
-/* line 339, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 template {
   display: none;
 }
@@ -391,7 +369,6 @@ template {
 /**
  * Add the correct display in IE 10.
  */
-/* line 347, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_normalize.scss */
 [hidden] {
   display: none;
 }
@@ -400,14 +377,12 @@ template {
 --------------------------------------------- */
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-/* line 3, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_box-sizing.scss */
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
-/* line 9, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/generic/_box-sizing.scss */
 html {
   box-sizing: border-box;
 }
@@ -417,7 +392,67 @@ html {
 --------------------------------------------------------------*/
 /* Typography
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5em;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", courier, monospace;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
 body,
 button,
 input,
@@ -430,85 +465,12 @@ textarea {
   line-height: 1.2;
 }
 
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_headings.scss */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  clear: both;
-}
-
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-p {
-  margin-bottom: 1.5em;
-}
-
-/* line 5, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-dfn,
-cite,
-em,
-i {
-  font-style: italic;
-}
-
-/* line 12, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-blockquote {
-  margin: 0 1.5em;
-}
-
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-address {
-  margin: 0 0 1.5em;
-}
-
-/* line 20, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-pre {
-  background: #eee;
-  font-family: "Courier 10 Pitch", courier, monospace;
-  line-height: 1.6;
-  margin-bottom: 1.6em;
-  max-width: 100%;
-  overflow: auto;
-  padding: 1.6em;
-}
-
-/* line 30, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-code,
-kbd,
-tt,
-var {
-  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-
-/* line 37, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-abbr,
-acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help;
-}
-
-/* line 43, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-mark,
-ins {
-  background: #fff9c0;
-  text-decoration: none;
-}
-
-/* line 49, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/typography/_copy.scss */
-big {
-  font-size: 125%;
-}
-
 /* Elements
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_body.scss */
 body {
-  background: #fff;
+  background: #f9f9f9;
 }
 
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_hr.scss */
 hr {
   background-color: #ccc;
   border: 0;
@@ -516,59 +478,49 @@ hr {
   margin-bottom: 1.5em;
 }
 
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_lists.scss */
 ul,
 ol {
   margin: 0 0 1.5em 3em;
 }
 
-/* line 6, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_lists.scss */
 ul {
   list-style: disc;
 }
 
-/* line 10, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_lists.scss */
 ol {
   list-style: decimal;
 }
 
-/* line 14, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_lists.scss */
 li > ul,
 li > ol {
   margin-bottom: 0;
   margin-left: 1.5em;
 }
 
-/* line 20, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_lists.scss */
 dt {
   font-weight: 700;
 }
 
-/* line 24, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_lists.scss */
 dd {
   margin: 0 1.5em 1.5em;
 }
 
 /* Make sure embeds and iframes fit their containers. */
-/* line 2, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_media.scss */
 embed,
 iframe,
 object {
   max-width: 100%;
 }
 
-/* line 8, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_media.scss */
 img {
   height: auto;
   max-width: 100%;
 }
 
-/* line 13, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_media.scss */
 figure {
   margin: 1em 0;
 }
 
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_tables.scss */
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -576,38 +528,28 @@ table {
 
 /* Links
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_links.scss */
 a {
   color: #4169e1;
 }
-
-/* line 4, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_links.scss */
 a:visited {
   color: #800080;
 }
-
-/* line 8, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_links.scss */
 a:hover, a:focus, a:active {
   color: #191970;
 }
-
-/* line 14, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_links.scss */
 a:focus {
   outline: thin dotted;
 }
-
-/* line 18, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_links.scss */
 a:hover, a:active {
   outline: 0;
 }
 
 /* Forms
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_buttons.scss */
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type=button],
+input[type=reset],
+input[type=submit] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
@@ -616,80 +558,74 @@ input[type="submit"] {
   line-height: 1;
   padding: 0.6em 1em 0.4em;
 }
-
-/* line 13, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_buttons.scss */
 button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
+input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover {
   border-color: #ccc #bbb #aaa;
 }
-
-/* line 17, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_buttons.scss */
 button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
+input[type=button]:active,
+input[type=button]:focus,
+input[type=reset]:active,
+input[type=reset]:focus,
+input[type=submit]:active,
+input[type=submit]:focus {
   border-color: #aaa #bbb #bbb;
 }
 
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_fields.scss */
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=tel],
+input[type=range],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color],
 textarea {
   color: #666;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 3px;
 }
-
-/* line 22, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_fields.scss */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=range]:focus,
+input[type=date]:focus,
+input[type=month]:focus,
+input[type=week]:focus,
+input[type=time]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=color]:focus,
 textarea:focus {
   color: #111;
 }
 
-/* line 27, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_fields.scss */
 select {
   border: 1px solid #ccc;
 }
 
-/* line 31, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/elements/_fields.scss */
 textarea {
   width: 100%;
 }
 
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/_global-styles.scss */
+.body {
+  background-color: #f9f9f9;
+}
+
 .sr-only {
   position: absolute;
   left: -10000px;
@@ -699,13 +635,63 @@ textarea {
   overflow: hidden;
 }
 
-/* line 10, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/base/_global-styles.scss */
 .button-reset {
   border: 0;
   margin: 0;
   padding: 0;
   background-color: unset;
   background-color: transparent;
+}
+
+.list-reset {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.content-width {
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+@media (min-width: 576px) {
+  .content-width {
+    max-width: 576px;
+  }
+}
+@media (min-width: 768px) {
+  .content-width {
+    max-width: 768px;
+  }
+}
+@media (min-width: 992px) {
+  .content-width {
+    max-width: 992px;
+  }
+}
+@media (min-width: 1200px) {
+  .content-width {
+    max-width: 1200px;
+  }
+}
+@media (min-width: 1400px) {
+  .content-width {
+    max-width: 1400px;
+  }
+}
+
+.custom-logo-link {
+  display: block;
+  width: 80px;
+}
+.custom-logo-link img {
+  display: block;
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -716,24 +702,19 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .main-navigation {
   display: block;
   width: 100%;
 }
-
-/* line 5, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .main-navigation ul {
   width: 0;
   position: relative;
-  transition: .4s ease;
+  transition: 0.4s ease;
   overflow: hidden;
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
-
-/* line 15, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
@@ -742,89 +723,62 @@ textarea {
   left: -999em;
   z-index: 99999;
 }
-
-/* line 23, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .main-navigation ul ul ul {
   left: -999em;
   top: 0;
 }
-
-/* line 30, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   display: block;
   left: auto;
 }
-
-/* line 37, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .main-navigation ul ul a {
   width: 200px;
 }
-
-/* line 50, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
 }
-
-/* line 56, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .main-navigation li {
   position: relative;
 }
-
-/* line 64, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .main-navigation a {
   display: block;
   text-decoration: none;
 }
-
 /* Small menu. */
-/* line 78, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .menu-toggle,
 .main-navigation.toggled ul {
   width: 100vw;
 }
-
-/* line 83, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .menu-toggle li,
 .main-navigation.toggled ul li {
   transform: translateX(0);
 }
 
 @media screen and (min-width: 37.5em) {
-  /* line 90, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
   .menu-toggle {
     display: none;
   }
-  /* line 94, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
   .main-navigation ul {
     display: flex;
     width: auto;
   }
 }
-
-/* line 104, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5em;
 }
-
-/* line 108, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
   display: flex;
 }
-
-/* line 112, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   flex: 1 0 50%;
 }
-
-/* line 116, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/navigation/_navigation.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
@@ -834,30 +788,25 @@ textarea {
 
 /* Posts and pages
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/content/_posts-and-pages.scss */
 .sticky {
   display: block;
 }
 
-/* line 5, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/content/_posts-and-pages.scss */
 .post,
 .page {
   margin: 0 0 1.5em;
 }
 
-/* line 10, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/content/_posts-and-pages.scss */
 .updated:not(.published) {
   display: none;
 }
 
-/* line 14, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/content/_posts-and-pages.scss */
 .page-content,
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
 }
 
-/* line 20, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/content/_posts-and-pages.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
@@ -865,31 +814,25 @@ textarea {
 
 /* Comments
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/comments/_comments.scss */
 .comment-content a {
   word-wrap: break-word;
 }
 
-/* line 5, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/comments/_comments.scss */
 .bypostauthor {
   display: block;
 }
 
 /* Widgets
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/widgets/_widgets.scss */
 .widget {
   margin: 0 0 1.5em;
 }
-
-/* line 5, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/widgets/_widgets.scss */
 .widget select {
   max-width: 100%;
 }
 
 /* Media
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_media.scss */
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -900,93 +843,75 @@ textarea {
 }
 
 /* Make sure logo link wraps around logo image. */
-/* line 11, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_media.scss */
 .custom-logo-link {
   display: inline-block;
 }
 
 /* Captions
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_captions.scss */
 .wp-caption {
   margin-bottom: 1.5em;
   max-width: 100%;
 }
-
-/* line 5, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_captions.scss */
-.wp-caption img[class*="wp-image-"] {
+.wp-caption img[class*=wp-image-] {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
-/* line 10, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_captions.scss */
 .wp-caption .wp-caption-text {
   margin: 0.8075em 0;
 }
 
-/* line 15, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_captions.scss */
 .wp-caption-text {
   text-align: center;
 }
 
 /* Galleries
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery {
   margin-bottom: 1.5em;
   display: grid;
   grid-gap: 1.5em;
 }
 
-/* line 7, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-item {
   display: inline-block;
   text-align: center;
   width: 100%;
 }
 
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-columns-2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-columns-3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-columns-4 {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-columns-5 {
   grid-template-columns: repeat(5, 1fr);
 }
 
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-columns-6 {
   grid-template-columns: repeat(6, 1fr);
 }
 
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-columns-7 {
   grid-template-columns: repeat(7, 1fr);
 }
 
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-columns-8 {
   grid-template-columns: repeat(8, 1fr);
 }
 
-/* line 16, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-columns-9 {
   grid-template-columns: repeat(9, 1fr);
 }
 
-/* line 21, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/components/media/_galleries.scss */
 .gallery-caption {
   display: block;
 }
@@ -997,14 +922,12 @@ textarea {
 /* Jetpack infinite scroll
 --------------------------------------------- */
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
-/* line 2, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/plugins/jetpack/_infinite-scroll.scss */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
   display: none;
 }
 
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
-/* line 8, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/plugins/jetpack/_infinite-scroll.scss */
 .infinity-end.neverending .site-footer {
   display: block;
 }
@@ -1015,7 +938,6 @@ textarea {
 /* Accessibility
 --------------------------------------------- */
 /* Text meant only for screen readers. */
-/* line 2, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/utilities/_accessibility.scss */
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -1028,10 +950,8 @@ textarea {
   width: 1px;
   word-wrap: normal !important;
 }
-
-/* line 14, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/utilities/_accessibility.scss */
 .screen-reader-text:focus {
-  background-color: #f1f1f1;
+  background-color: #f9f9f9;
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
@@ -1051,14 +971,12 @@ textarea {
 }
 
 /* Do not show the outline on the skip link target. */
-/* line 36, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/utilities/_accessibility.scss */
 #primary[tabindex="-1"]:focus {
   outline: 0;
 }
 
 /* Alignments
 --------------------------------------------- */
-/* line 1, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/utilities/_alignments.scss */
 .alignleft {
   /*rtl:ignore*/
   float: left;
@@ -1067,7 +985,6 @@ textarea {
   margin-bottom: 1.5em;
 }
 
-/* line 11, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/utilities/_alignments.scss */
 .alignright {
   /*rtl:ignore*/
   float: right;
@@ -1076,7 +993,6 @@ textarea {
   margin-bottom: 1.5em;
 }
 
-/* line 21, ../../../Projects/wp-local-sites/en-portfolio/app/public/wp-content/themes/en-portfolio-site/sass/utilities/_alignments.scss */
 .aligncenter {
   clear: both;
   display: block;
