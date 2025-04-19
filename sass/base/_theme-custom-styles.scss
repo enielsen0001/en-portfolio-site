@@ -1,12 +1,49 @@
-@use 'vars-mixins';
+@use 'vars-mixins' as vars;
 
 // header ------------------------------
+
+.site-header {
+    &-inner {
+        position: relative;
+        padding: 15px 0;
+        justify-content: space-between;
+        align-items: center;
+
+        @include vars.breakpoint('md') {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.home .site-header {
+
+
+    @include vars.breakpoint('md') {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: vars.$neutral-bg;
+    }
+
+    @include vars.breakpoint(1040px) {
+        background-color: unset;
+    }
+}
+
 .custom-logo-link {
     display: block;
-    width: 80px;
+    width: 65px;
 
     img {
         display: block;
         width: 100%;
     }
 }
+
+.home-hero-content {
+    @include vars.breakpoint('md') {
+        position: absolute;
+    }
+}
+

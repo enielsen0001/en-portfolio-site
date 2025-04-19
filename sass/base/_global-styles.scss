@@ -1,7 +1,12 @@
 @use 'vars-mixins' as vars;
 
-.body {
+html {
+  font-size: 62.5%;
+}
+
+body {
     background-color: vars.$neutral-bg;
+    font-size: 1.6rem;
 }
 
 .sr-only {
@@ -30,16 +35,17 @@
   @each $breakpoint, $value in vars.$grid-breakpoints {
     @if ($value == 0) {
       .d-flex {
-        display: flex !important;
+        display: flex;
       }
     } @else {
       .d-flex-#{$breakpoint} {
         @media (min-width: $value) {
-          display: flex !important;
+          display: flex;
         }
       }
     }
   }
+
 
   .content-width {
     width: calc(100% - 40px);

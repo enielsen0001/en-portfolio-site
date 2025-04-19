@@ -20,6 +20,8 @@
 	}
 
 	const menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
+	const menuContainer = siteNavigation.getElementsByClassName('menu-main-menu-container')[0];
+	const menuLinks = menu.getElementsByTagName('a');
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
@@ -31,16 +33,80 @@
 		menu.classList.add( 'nav-menu' );
 	}
 
+	menu.setAttribute('aria-hidden', true);
+
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener( 'click', function() {
 		siteNavigation.classList.toggle( 'toggled' );
 
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
+
+			menuContainer.classList.remove('menu-open');
+			menu.classList.remove('menu-open');
+
 			button.setAttribute( 'aria-expanded', 'false' );
+			menuContainer.setAttribute('aria-hidden', 'true');
+
+			Array.from(menuLinks).forEach(item => {
+				item.setAttribute('tabindex', '-1');
+			});
+
+			menu.setAttribute('aria-hidden', 'true');
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
+
+			menuContainer.classList.add('menu-open');
+			menu.classList.add('menu-open');
+
+			menu.removeAttribute('aria-hidden');
+			menuContainer.removeAttribute('aria-hidden');
+
+			Array.from(menuLinks).forEach(item => {
+				item.removeAttribute('tabindex');
+			});
 		}
 	} );
+
+	function updateMenuAccessibility(e) {
+		if (e.matches) {
+			if (button.getAttribute('aria-expanded') === 'true') {
+				menuContainer.removeAttribute('aria-hidden');
+				menu.removeAttribute('aria-hidden');
+
+				Array.from(menuLinks).forEach(item => {
+					item.removeAttribute('tabindex');
+				});
+
+			} else {
+				menuContainer.setAttribute('aria-hidden', 'true');
+				menu.setAttribute('aria-hidden', 'true');
+
+				Array.from(menuLinks).forEach(item => {
+					item.setAttribute('tabindex', '-1');
+				});
+			}
+
+			menuContainer.classList.add('js-is-mobile-menu');
+			button.classList.remove('js-hide-toggle');
+		} else {
+			menuContainer.removeAttribute('aria-hidden');
+			menu.removeAttribute('aria-hidden');
+
+			Array.from(menuLinks).forEach(item => {
+				item.removeAttribute('tabindex');
+			});
+
+			button.classList.add('js-hide-toggle');
+			menuContainer.classList.remove('js-is-mobile-menu');
+		}
+	}
+
+	// Initial check
+	let mql = window.matchMedia("(max-width: 576px)");
+	updateMenuAccessibility(mql);
+
+	// Listen for breakpoint changes
+	mql.addEventListener('change', updateMenuAccessibility);
 
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
 	document.addEventListener( 'click', function( event ) {

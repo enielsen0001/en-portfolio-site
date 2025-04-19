@@ -28,7 +28,7 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'en-portfolio-site' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="content-width d-flex">
+		<div class="content-width d-flex site-header-inner">
 			<div class="site-branding">
 				<?php
 				the_custom_logo();
@@ -37,8 +37,12 @@
 
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle button-reset" aria-controls="primary-menu" aria-expanded="false">
-					<span class="sr-only"><?php esc_html_e( 'Primary Menu', 'en-portfolio-site' ); ?></span>
-					<i class="fa fa-bars"></i>
+					<span class="sr-only">Open Menu</span>
+					<span class="hamburger-icon">
+						<span class="hamburger-icon-bar hamburger-icon-bar-1"></span>
+						<span class="hamburger-icon-bar hamburger-icon-bar-2"></span>
+						<span class="hamburger-icon-bar hamburger-icon-bar-3"></span>
+					</span>
 				</button>
 				<?php
 				wp_nav_menu(

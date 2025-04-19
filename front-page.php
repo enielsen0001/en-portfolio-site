@@ -21,8 +21,8 @@ if ( $contact_page ) {
 
         <div class="home-hero">
 
-            <div class="content-width">
-                <div class="home-hero-content">
+            <div class="home-hero-content">
+                <div class="content-width">
                     <h1 class="home-hero-content__title">Erika Nielsen</h1>
                     <p class="home-hero-content__tagline home-hero-content__tagline--1">Web Developer &amp; Designer</p>
                     <p class="home-hero-content__tagline home-hero-content__tagline--1">Transforming ideas into engaging online experiences</p>

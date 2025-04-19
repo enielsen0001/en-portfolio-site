@@ -357,7 +357,7 @@ function my_theme_customize_register( $wp_customize ) {
 
     // Background Color
     $wp_customize->add_setting( 'background_color', array(
-        'default'           => '#fdfdfd',
+        'default'           => '#f9f9f9',
         'sanitize_callback' => 'sanitize_hex_color',
         'transport'         => 'postMessage',
     ) );
@@ -437,7 +437,7 @@ add_action( 'customize_preview_init', 'my_theme_customize_preview_js' );
 
 // Output CSS in the <head> for front-end styling
 function my_theme_customize_css() {
-    $background_color = get_theme_mod( 'background_color', '#fdfdfd' );
+    $background_color = get_theme_mod( 'background_color', '#f9f9f9' );
     $text_color       = get_theme_mod( 'text_color', '#222222' );
     $accent_color_1   = get_theme_mod( 'accent_color_1', '#f8b705' );
     $accent_color_2   = get_theme_mod( 'accent_color_2', '#131a48' );

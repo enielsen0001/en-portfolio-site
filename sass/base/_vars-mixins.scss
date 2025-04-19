@@ -6,64 +6,129 @@
   $theme-color-4: #00a6a6;
   $neutral-bg: #f9f9f9;
 
-:root {
-    /* CSS HEX */
-    --text-color: #{$text-color};
-    --neutral-background: #{$neutral-bg};
-    --theme-color-1: #{$theme-color-1};
-    --theme-color-2: #{$theme-color-2};
-    --theme-color-3: #{$theme-color-3};
-    --theme-color-4: #{$theme-color-4};
-}
-
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
-
-$content-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1320px
-);
-
-@mixin content-max-width($breakpoints: $grid-breakpoints) {
-  max-width: 100%;
-
-  @each $name, $width in $breakpoints {
-    @if $width != 0 { // Apply only for breakpoints larger than 0
-      @media (min-width: $width) {
-        max-width: $width;
-      }
-    }
+  :root {
+      /* CSS HEX */
+      --text-color: #{$text-color};
+      --neutral-background: #{$neutral-bg};
+      --theme-color-1: #{$theme-color-1};
+      --theme-color-2: #{$theme-color-2};
+      --theme-color-3: #{$theme-color-3};
+      --theme-color-4: #{$theme-color-4};
   }
-}
 
-// Center block
-@mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
 
-// Column width with margin
-@mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
-}
+  $grid-breakpoints: (
+      xs: 0,
+      sm: 576px,
+      md: 768px,
+      lg: 992px,
+      xl: 1200px,
+      xxl: 1400px
+  );
 
-@function vw($px-value, $browser-width-px) {
-  @return calc($px-value / $browser-width-px * 100vw);
-}
+  $max-width-breakpoints: (
+    xs: 0,
+    // sm: 576px,
+    // md: 768px,
+    // lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
 
-@mixin vp-max ($px-value, $vp-value, $max-px, $style) {
-  $vw: vw($px-value, $vp-value);
-  #{$style}: $px-value;
-  #{$style}: min($vw, $max-px);
-}
+  $content-max-widths: (
+      sm: 540px,
+      md: 720px,
+      lg: 960px,
+      xl: 1140px,
+      xxl: 1320px
+  );
+
+  @mixin content-max-width($breakpoints: $max-width-breakpoints) {
+      max-width: 100%;
+
+      @each $name, $width in $breakpoints {
+          @if $width !=0 {
+
+              // Apply only for breakpoints larger than 0
+              @media (min-width: $width) {
+                  max-width: $width;
+              }
+          }
+      }
+  }
+
+  // Center block
+  @mixin center-block {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  // Column width with margin
+  @mixin column-width($numberColumns: 3) {
+      width: map-get($columns, $numberColumns) - (($columns__margin * ($numberColumns - 1)) / $numberColumns );
+  }
+
+  @function vw($px-value, $browser-width-px) {
+      @return calc($px-value / $browser-width-px * 100vw);
+  }
+
+  @mixin vp-max ($px-value, $vp-value, $max-px, $style) {
+      $vw: vw($px-value, $vp-value);
+      #{$style}: $px-value;
+      #{$style}: min($vw, $max-px);
+  }
+
+  @mixin breakpointmax($break) {
+      @if map-has-key($grid-breakpoints, $break) {
+          $break-value: map-get($grid-breakpoints, $break);
+
+          @media screen and (max-width: #{$break-value - 1px}) {
+              @content;
+          }
+      }
+
+      @else {
+          @media screen and (max-width: $break) {
+              @content;
+          }
+      }
+  }
+
+  @mixin breakpoint($break) {
+      @if map-has-key($grid-breakpoints, $break) {
+          $break-value: map-get($grid-breakpoints, $break);
+
+          @media screen and (min-width: $break-value) {
+              @content;
+          }
+      }
+
+      @else {
+          @media screen and (min-width: $break) {
+              @content;
+          }
+      }
+  }
+
+  @mixin vert-and-center-align {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  }
+
+  @mixin vert-align {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+  }
+
+  @mixin center-align {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+  }
