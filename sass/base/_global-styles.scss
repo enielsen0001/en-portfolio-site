@@ -1,7 +1,7 @@
 @use 'vars-mixins' as vars;
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
@@ -10,12 +10,12 @@ body {
 }
 
 .sr-only {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .button-reset {
@@ -30,28 +30,76 @@ body {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
-  }
+}
 
-  @each $breakpoint, $value in vars.$grid-breakpoints {
-    @if ($value == 0) {
-      .d-flex {
-        display: flex;
-      }
-    } @else {
-      .d-flex-#{$breakpoint} {
-        @media (min-width: $value) {
-          display: flex;
+@each $breakpoint, $value in vars.$grid-breakpoints {
+    @if ($value ==0) {
+        .d-flex {
+            display: flex;
         }
-      }
     }
-  }
+
+    @else {
+        .d-flex-#{$breakpoint} {
+            @media (min-width: $value) {
+                display: flex;
+            }
+        }
+    }
+}
 
 
-  .content-width {
+.content-width {
     width: calc(100% - 40px);
     margin-left: auto;
     margin-right: auto;
     @include vars.content-max-width;
-  }
+}
 
+.row {}
 
+.btn {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: inherit;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background: none;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: .2rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: vars.$body-font;
+    text-decoration: none;
+
+    &-filled {
+        background-color: vars.$theme-color-2;
+        border: 1px solid vars.$theme-color-2;
+        color: #fff;
+    }
+
+    &-outline {
+        color: vars.$theme-color-2;
+        border: 1px solid vars.$theme-color-2;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a:not([class]) {
+    color: vars.$theme-color-3;
+    font-weight: 500;
+}

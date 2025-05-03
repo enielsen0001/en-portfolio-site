@@ -299,6 +299,10 @@ function display_recent_custom_posts( $custom_post_type ) {
 				}
 				echo '</div>';
 				wp_reset_postdata(); // IMPORTANT: Restore original post data
+
+				echo '<p class="rcp-view-all"><a class="btn btn-filled" href="' . esc_url( get_permalink( get_option( 'page_for_posts' ) ) ) . '">View All Projects</a></p>';
+
+
 			} else {
 				echo '<p>No posts found for the custom post type: ' . esc_html( $custom_post_type ) . '</p>';
 			}
@@ -337,7 +341,7 @@ function display_recent_blog_posts() {
 		echo '</div>';
 
 		// Link to view all posts
-		echo '<p class="view-all-posts"><a href="' . esc_url( get_permalink( get_option( 'page_for_posts' ) ) ) . '">View All Posts</a></p>';
+		echo '<p class="rbp-view-all"><a class="btn btn-filled" href="' . esc_url( get_permalink( get_option( 'page_for_posts' ) ) ) . '">View All Posts</a></p>';
 
 		wp_reset_postdata(); // Restore original post data
 	else :

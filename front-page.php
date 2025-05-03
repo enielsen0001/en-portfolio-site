@@ -20,36 +20,39 @@ if ( $contact_page ) {
 	<main id="primary" class="site-main">
 
         <div class="home-hero">
+            <div class="content-width">
+                <div class="home-hero-content">
+                    <div class="home-hero-content-inner">
+                        <h1 class="home-hero-content-title">Erika <br>Nielsen</h1>
+                        <p class="home-hero-content-tagline home-hero-content-tagline-1">Web Developer &amp; Designer</p>
 
-            <div class="home-hero-content">
-                <div class="content-width">
-                    <h1 class="home-hero-content__title">Erika Nielsen</h1>
-                    <p class="home-hero-content__tagline home-hero-content__tagline--1">Web Developer &amp; Designer</p>
-                    <p class="home-hero-content__tagline home-hero-content__tagline--1">Transforming ideas into engaging online experiences</p>
 
-                    <div class="home-hero-content__cta-group">
-                        <a href="<?php echo $project_archive_url; ?>">View my portfolio</a>
-                        <a href="<?php echo $contact_url; ?>">Contact Me</a>
+                        <p class="home-hero-content-tagline home-hero-content-tagline-2">Transforming ideas into engaging <br>online experiences</p>
+
+                        <div class="home-hero-content-cta-group">
+                            <a class="btn btn-filled" href="<?php echo $project_archive_url; ?>">View my portfolio</a>
+                            <a class="btn btn-outline" href="<?php echo $contact_url; ?>">Contact Me</a>
+                        </div>
                     </div>
 
                 </div>
-            </div>
 
-            <picture>
-                <?php
-                $upload_dir = wp_get_upload_dir();
-                $mobile_url = trailingslashit( $upload_dir['baseurl'] ) . '2025/04/hero-graphic-sm.svg';
-                $desktop_url = trailingslashit( $upload_dir['baseurl'] ) . '2025/04/hero-graphic-lg.svg';
-                $fallback_url = trailingslashit( $upload_dir['baseurl'] ) . '2025/04/hero-graphic-lg.svg';
-                ?>
-                <source media="(max-width: 767px)" srcset="<?php echo esc_url( $mobile_url ); ?>">
-                <source srcset="<?php echo esc_url( $desktop_url ); ?>">
-                <img src="<?php echo esc_url( $fallback_url ); ?>" alt="abstract geometric shapes">
-            </picture>
+                <div  class="home-hero-img-frame">
+
+                    <?php
+                    $upload_dir = wp_get_upload_dir();
+                    $hero_url = trailingslashit( $upload_dir['baseurl'] ) . '2025/04/hero-graphic-sm.svg';
+                    ?>
+
+                    <img class="home-hero-img" src="<?php echo esc_url( $hero_url ); ?>" alt="abstract geometric shapes">
+
+                </div>
+
+            </div>
 
         </div>
 
-        <section class="content-width">
+        <section class="content-width row">
 
             <h2>Recent Projects</h2>
 
@@ -59,7 +62,7 @@ if ( $contact_page ) {
 
         </section>
 
-        <section class="content-width">
+        <section class="content-width row">
 
             <h2>My Key Skills</h2>
             <?php include( get_template_directory() . '/template-parts/skills-partial.php' ); ?>
@@ -76,7 +79,7 @@ if ( $contact_page ) {
 
         </section>
 
-        <section class="fp-about">
+        <section class="fp-about row">
             <div class="content-width">
                 <h2>Hello, World!</h2>
 
@@ -86,14 +89,14 @@ if ( $contact_page ) {
             <div>
         </section>
 
-        <section class="content-width">
+        <section class="content-width row">
             <h2>Latest Insights</h2>
             <?php display_recent_blog_posts( 'projects' ); ?>
         </section>
 
         <?php include( get_template_directory() . '/template-parts/contact-cta.php' ); ?>
 
-	</main><!-- #main -->
+	</main><!- #main ->
 
 <?php
 get_footer();

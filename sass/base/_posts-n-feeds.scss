@@ -1,0 +1,59 @@
+@use 'vars-mixins' as vars;
+
+// projects featured link --------------------------------
+
+
+.rcp {
+    &s {}
+
+    &-thumbnail {
+        img {}
+    }
+
+    &-no-thumbnail {}
+
+    &-title {}
+
+    &-categories {}
+
+    &-category{ //a
+
+    }
+
+    &-excerpt {}
+
+    &-tag {
+
+        &s {
+
+        }
+    }
+
+    &-read-more-link {}
+
+    &-view-all {}
+}
+
+
+
+
+// blog featured link ------------------------------------
+.rbp {
+    &s {}
+
+    &-link {}
+
+    &-title {}
+
+    &-excerpt {}
+
+    &-view-all {}
+}
+
+
+
+// projects list -----------------------------------------
+
+
+
+// blog list ---------------------------------------------

@@ -34,16 +34,16 @@
 				?>
 			</nav>
 			<div class="footer-social">
-				<a href="https://www.linkedin.com/in/enielsen0001/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+				<a class="footer-social-link" href="https://www.linkedin.com/in/enielsen0001/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
 
-				<a href="https://github.com/enielsen0001" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+				<a class="footer-social-link" href="https://github.com/enielsen0001" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
 			</div>
 		</div>
         <div class="footer-bottom">
-            <p class="footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
-            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            <p class="footer-copy">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
+            <a class="footer-privacy" href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         </div>
-		<p class="footer-to-top"><a href="#top">Back to Top</a></p>
+		<p class="footer-to-top"><a  class="footer-to-top-link" href="#top">Back to Top</a></p>
     </div>
 </footer>
 

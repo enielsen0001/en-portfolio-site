@@ -1,7 +1,8 @@
 @use '../../abstracts/variables/colors' as colors;
 @use '../../abstracts/variables/typography' as type;
 
-p {
+p:not([class]) {
+	margin-top: 0;
 	margin-bottom: 1.5em;
 }
 

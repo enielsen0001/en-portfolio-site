@@ -1,10 +1,12 @@
-  /* SCSS HEX */
+$body-font: "Montserrat", sans-serif;
+
   $text-color: #222222;
   $theme-color-1: #f8b705;
   $theme-color-2: #131a48;
   $theme-color-3: #ff6120;
   $theme-color-4: #00a6a6;
-  $neutral-bg: #f9f9f9;
+  $neutral-bg: #fafafa;
+  $theme-collor-a11y-orange: #cc4700;
 
   :root {
       /* CSS HEX */
@@ -28,9 +30,9 @@
 
   $max-width-breakpoints: (
     xs: 0,
-    // sm: 576px,
-    // md: 768px,
-    // lg: 992px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
     xl: 1200px,
     xxl: 1400px
 );
@@ -74,8 +76,9 @@
   }
 
   @mixin vp-max ($px-value, $vp-value, $max-px, $style) {
+
       $vw: vw($px-value, $vp-value);
-      #{$style}: $px-value;
+      #{$style}: #{$px-value}px;
       #{$style}: min($vw, $max-px);
   }
 

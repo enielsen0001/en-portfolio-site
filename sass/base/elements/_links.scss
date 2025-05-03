@@ -1,24 +1,24 @@
 @use '../../abstracts/variables/colors' as colors;
 
-a {
-	color: colors.$color__link;
+// a {
+// 	color: colors.$color__link;
 
-	&:visited {
-		color: colors.$color__link-visited;
-	}
+// 	&:visited {
+// 		color: colors.$color__link-visited;
+// 	}
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: colors.$color__link-hover;
-	}
+// 	&:hover,
+// 	&:focus,
+// 	&:active {
+// 		color: colors.$color__link-hover;
+// 	}
 
-	&:focus {
-		outline: thin dotted;
-	}
+// 	&:focus {
+// 		outline: thin dotted;
+// 	}
 
-	&:hover,
-	&:active {
-		outline: 0;
-	}
-}
+// 	&:hover,
+// 	&:active {
+// 		outline: 0;
+// 	}
+// }

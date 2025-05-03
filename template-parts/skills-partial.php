@@ -96,3 +96,6 @@ else :
     echo '<p>Skills data is not available.</p>';
 endif;
 ?>
+
+<a href="/skills" class="button button-primary">See All Skills</a>
+<p>For a comprehensive overview of my technical skills and proficiency, please visit my <a href="/skills">skills page</a>.</p>

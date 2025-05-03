@@ -3,6 +3,9 @@
 // header ------------------------------
 
 .site-header {
+    position: relative;
+    z-index: 1;
+
     &-inner {
         position: relative;
         padding: 15px 0;
@@ -16,17 +19,13 @@
 }
 
 .home .site-header {
-
-
-    @include vars.breakpoint('md') {
-        position: absolute;
+    position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         background-color: vars.$neutral-bg;
-    }
 
-    @include vars.breakpoint(1040px) {
+    @include vars.breakpoint('md') {
         background-color: unset;
     }
 }
@@ -41,9 +40,279 @@
     }
 }
 
-.home-hero-content {
+// footer ----------------------------------------------------
+.site-footer {}
+
+.footer {
+    &-top {}
+
+    &-bottom {}
+
+    &-to-top {
+        &-link {}
+    }
+
+    &-logo {
+        &-link {
+            img {}
+        }
+    }
+
+    &-menu {}
+
+    .menu-item {}
+
+    &-social {
+        &-link {}
+    }
+
+    &-copy {}
+
+    &-privacy {}
+}
+
+.menu-footer-menu-container {}
+
+
+// home hero
+.home-hero {
+    position: relative;
+
     @include vars.breakpoint('md') {
-        position: absolute;
+        height: calc(100vw * (9 / 16));
+        max-height: 900px;
+    }
+
+    .content-width {
+        position: relative;
+
+        @include vars.breakpointmax('md') {
+            max-width: none !important;
+        }
+
+        @include vars.breakpoint('md') {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &-content {
+        width: 50%;
+
+        @include vars.breakpointmax('md') {
+            position: absolute;
+            width: calc(100% - 40px);
+            @include vars.vert-and-center-align;
+            z-index: 1;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: -1;
+            }
+
+            &:before {
+                background-color: vars.$theme-color-2;
+                width: 25%;
+                height: 80%;
+                left: -20px;
+                bottom: -20px;
+            }
+
+            &:after {
+                background-color: vars.$theme-color-3;
+                width: 50%;
+                height: 100%;
+                top: -20px;
+                right: -20px;
+            }
+        }
+
+        &-inner {
+            @include vars.breakpointmax('md') {
+                text-align: center;
+                background-color: vars.$neutral-bg;
+                padding: vars.vw(20,325);
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 1;
+            }
+        }
+
+        &-title {
+            line-height: 1;
+            margin-bottom: .1em;
+            @include vars.vp-max(35,375, 5.7rem, 'font-size');
+            text-transform: uppercase;
+            font-weight: 800;
+
+            @include vars.breakpoint('md') {
+                line-height: .8;
+                font-size: 6.2rem;
+            }
+
+            @include vars.breakpoint('lg') {
+                font-size: 8rem;
+            }
+
+            @include vars.breakpoint('xl') {
+                font-size: 9.6rem;
+            }
+
+            @include vars.breakpoint('xxl') {
+                font-size: 10rem;
+            }
+
+            br {
+                @include vars.breakpointmax('md') {
+                    display: none;
+                }
+            }
+        }
+
+        &-tagline {
+            margin: 0 0 1rem;
+
+            @include vars.breakpoint('md') {
+                margin-bottom: .75em;
+            }
+
+            &-1{
+                @include vars.vp-max(17,375, 2.8rem, 'font-size');
+                font-weight: 500;
+
+                @include vars.breakpoint('md') {
+                    font-size: 2.34rem;
+                }
+
+                @include vars.breakpoint('lg') {
+                    font-size: 3rem;
+                }
+
+                @include vars.breakpoint('xl') {
+                    font-size: 3.65rem;
+                }
+
+                @include vars.breakpoint('xxl') {
+                    font-size: 3.8rem;
+                }
+            }
+
+            &-2 {
+                @include vars.vp-max(14,375, 2rem, 'font-size');
+
+                @include vars.breakpoint('md') {
+                    font-size: 1.74rem;
+                }
+
+                @include vars.breakpoint('lg') {
+                    font-size: 2.24rem;
+                }
+
+                @include vars.breakpoint('xl') {
+                    font-size: 2.7rem;
+                }
+
+                @include vars.breakpoint('xxl') {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+
+        &-cta-group {
+            margin-top: 25px;
+            display: flex;
+
+
+            $btn-break: 'sm';
+
+            flex-direction: column;
+
+            @include vars.breakpoint(#{$btn-break}) {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            @include vars.breakpoint('md') {
+                justify-content: start;
+            }
+
+            .btn {
+                @include vars.vp-max(14,375, 2rem, 'font-size');
+                padding: .5em 1em;
+
+                @include vars.breakpoint('md') {
+                    font-size: 1.6rem;
+                }
+
+                @include vars.breakpoint('lg') {
+                    font-size: 2rem;
+                }
+
+                &:first-child {
+                    margin: 0 0 .75em 0;
+
+                    @include vars.breakpoint(#{$btn-break}) {
+                        margin: 0 .75em 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &-img {
+        display: block;
+        width: 100%;
+
+        @include vars.breakpointmax('md') {
+            height: 100%;
+            object-fit: contain;
+            object-position: center right;
+        }
+
+        &-frame {
+            width: 50%;
+            height: 100%;
+
+            @include vars.breakpointmax('md') {
+                width: calc(100% + 40px);
+                margin-left: -20px;
+            }
+        }
     }
 }
+
+// home skills -----------------------------------------------
+.skills-wrap {}
+
+.skills-list {}
+
+.skill-bar {
+    &.in-view {}
+
+    &__text {}
+
+    &__bar {}
+}
+
+.developing-skills-list {}
+
+
+// about callout ---------------------------------------------
+.fp-about {
+
+}
+
+// contact cta -----------------------------------------------
+.contact-cta {
+    &-headline {}
+
+    &-interest {}
+
+    &-link {}
+}
+
+
 
