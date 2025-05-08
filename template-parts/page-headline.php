@@ -70,7 +70,8 @@ if ( is_front_page() ) {
 
 <div class="page-title page-type--<?php echo esc_attr( $page_type ); ?> page-slug--<?php echo esc_attr( $page_slug ); ?>">
 	<div class="content-width">
-		<<?php echo esc_attr( $tag ); ?> class="custom-headline"><?php echo esc_html( $title ); ?></<?php echo esc_attr( $tag ); ?>>
+		<<?php echo esc_attr( $tag ); ?> class="page-title__hl">
+        <span class="page-title__hl-txt"><?php echo esc_html( $title ); ?></span></<?php echo esc_attr( $tag ); ?>>
 	</div>
 </div>
 

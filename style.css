@@ -403,6 +403,60 @@ html {
   box-sizing: border-box;
 }
 
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
@@ -1124,6 +1178,11 @@ a:not([class]) {
 @media screen and (min-width: 768px) {
   .footer-top, .footer-bottom {
     flex-direction: row;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer-top, .footer-bottom {
     align-items: center;
   }
 }
@@ -1155,8 +1214,18 @@ a:not([class]) {
     text-align: left;
   }
 }
+@media screen and (min-width: 992px) {
+  .footer-menu {
+    display: flex;
+  }
+}
 .footer .menu-item {
   margin-bottom: 0.5em;
+}
+@media screen and (min-width: 992px) {
+  .footer .menu-item {
+    margin: 0 1.5em 0 0;
+  }
 }
 .footer .menu-item:last-child {
   margin-bottom: 0;
@@ -1534,6 +1603,46 @@ a:not([class]) {
 }
 .contact-cta-link {
   margin-left: auto;
+}
+
+.page-title {
+  background-color: #f8b705;
+  margin: 30px 0;
+}
+@media screen and (min-width: 768px) {
+  .page-title {
+    margin: 50px 0;
+  }
+}
+.page-title__hl-txt {
+  display: inline-block;
+  position: relative;
+  background-color: #fafafa;
+  padding: 0.2em;
+  line-height: 1;
+}
+@media screen and (min-width: 768px) {
+  .page-title__hl-txt {
+    font-size: 6.8rem;
+  }
+}
+.page-title__hl-txt:after, .page-title__hl-txt:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+.page-title__hl-txt:after {
+  border-width: 1.4em 1em 0 0;
+  border-color: #fafafa transparent transparent transparent;
+  left: 100%;
+}
+.page-title__hl-txt:before {
+  border-width: 0 0 1.4em 1em;
+  border-color: transparent transparent #fafafa transparent;
+  right: 100%;
 }
 
 /*--------------------------------------------------------------
