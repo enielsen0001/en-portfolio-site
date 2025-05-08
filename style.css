@@ -1010,7 +1010,6 @@ a:not([class]) {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
   gap: 1rem;
-  padding: 1rem;
 }
 @media screen and (min-width: med) {
   .rbps {
