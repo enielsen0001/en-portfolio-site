@@ -103,3 +103,22 @@ a:not([class]) {
     color: vars.$theme-color-3;
     font-weight: 500;
 }
+
+.row {
+    @include vars.section-margin;
+}
+
+.accent-hl {
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        width: 70%;
+        height: 5px;
+        background-color: vars.$theme-color-3;
+    }
+}

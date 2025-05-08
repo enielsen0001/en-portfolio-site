@@ -253,7 +253,7 @@ function display_recent_custom_posts( $custom_post_type ) {
 						the_post_thumbnail( 'thumbnail' ); // You can change 'thumbnail' to other image sizes
 						echo '</div>';
 					} else {
-						echo '<div class="rcp-no-thumbnail"></div>';
+						echo '<div class="rcp-no-thumbnail rcp-no-thumbnail-bg-' . rand(1, 4) . '"></div>';
 					}
 					?>
 
@@ -269,7 +269,7 @@ function display_recent_custom_posts( $custom_post_type ) {
 						foreach ( $categories as $category ) {
 							$category_links[] = '<a class="rcp-category" href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag">' . esc_html( $category->name ) . '</a>';
 						}
-						echo implode( ', ', $category_links );
+						echo implode( '', $category_links );
 						echo '</div>';
 					}
 
@@ -289,11 +289,11 @@ function display_recent_custom_posts( $custom_post_type ) {
 						foreach ( $tags as $tag ) {
 							$tag_links[] = '<a class="rcp-tag" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" rel="tag">' . esc_html( $tag->name ) . '</a>';
 						}
-						echo implode( ', ', $tag_links );
+						echo implode( '', $tag_links );
 						echo '</div>';
 					}
 
-					echo '<a href="' . esc_url( get_the_permalink() ) . '" class="rcp-read-more-link" aria-label="Read more about ' . esc_attr( get_the_title() ) . '">Read More</a>';
+					echo '<div class="rcp-read-more-link-wrap"><a href="' . esc_url( get_the_permalink() ) . '" class="rcp-read-more-link" aria-label="Read more about ' . esc_attr( get_the_title() ) . '"><span>Read More</span>  <i class="fa-solid fa-caret-right"></i></a></div>';
 
 					echo '</article>';
 				}
@@ -329,10 +329,17 @@ function display_recent_blog_posts() {
 		while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 			?>
 			<article class="rbp">
-				<a href="<?php the_permalink(); ?>">
+				<a class="rbp-link rbp-link-bg-<?php echo rand(1, 4); ?>" href="<?php the_permalink(); ?>">
 					<h3 class="rbp-title"><?php the_title(); ?></h3>
 					<div class="rbp-excerpt">
 						<?php the_excerpt(); ?>
+					</div>
+
+					<div class="rbp-read-more-link-wrap">
+						<span class="rbp-read-more-link accent-link">
+							<span>Read More</span>
+							<i class="fa-solid fa-caret-right"></i>
+						</span>
 					</div>
 				</a>
 			</article>

@@ -26,3 +26,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Optionally, check on resize as well
     window.addEventListener('resize', checkVisibility);
   });
+
+
+  window.onscroll = function() {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("back-to-top").style.display = "block";
+    } else {
+      document.getElementById("back-to-top").style.display = "none";
+    }
+  }
+
+  document.getElementById('back-to-top').addEventListener('click', function(e) {
+    e.preventDefault();
+    if ('scrollBehavior' in document.documentElement.style) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
+  });

@@ -1,5 +1,28 @@
 @use 'vars-mixins' as vars;
 
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+#back-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 // header ------------------------------
 
 .site-header {
@@ -20,10 +43,10 @@
 
 .home .site-header {
     position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: vars.$neutral-bg;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: vars.$neutral-bg;
 
     @include vars.breakpoint('md') {
         background-color: unset;
@@ -44,31 +67,94 @@
 .site-footer {}
 
 .footer {
-    &-top {}
+    &-top,
+    &-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
 
-    &-bottom {}
+        @include vars.breakpoint('md') {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
 
-    &-to-top {
-        &-link {}
+    &-bottom {
+        justify-content: center;
+        font-size: 1.2rem;
     }
 
     &-logo {
+        text-align: center;
+        margin-bottom: 20px;
+
+        @include vars.breakpoint('md') {
+            margin: 5px 0 0;
+            align-self: flex-start;
+        }
+
+
         &-link {
             img {}
         }
     }
 
-    &-menu {}
+    &-menu {
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+        margin: 0 0 40px;
 
-    .menu-item {}
+        @include vars.breakpoint('md') {
+            margin: 0 0 0 40px;
+            padding: 5px 0 5px 40px;
+            border-left: 1px solid vars.$text-color;
+            text-align: left;
+        }
+    }
+
+    .menu-item {
+        margin-bottom: .5em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: vars.$text-color;
+            text-decoration: none;
+
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+
+    }
 
     &-social {
-        &-link {}
+        @include vars.breakpoint('md') {
+            margin-left: auto;
+        }
+
+        &-link {
+            color: vars.$text-color;
+            opacity: 1;
+            margin: 0 5px;
+            font-size: 2.2rem;
+            transition: opacity .2s;
+
+            &:hover, &:focus {
+                opacity: .6;
+            };
+        }
     }
 
     &-copy {}
 
-    &-privacy {}
+    &-privacy {
+        color: vars.$text-color;
+    }
 }
 
 .menu-footer-menu-container {}
@@ -77,6 +163,7 @@
 // home hero
 .home-hero {
     position: relative;
+    @include vars.section-margin;
 
     @include vars.breakpoint('md') {
         height: calc(100vw * (9 / 16));
@@ -135,7 +222,7 @@
             @include vars.breakpointmax('md') {
                 text-align: center;
                 background-color: vars.$neutral-bg;
-                padding: vars.vw(20,325);
+                padding: vars.vw(20, 325);
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                 z-index: 1;
             }
@@ -144,7 +231,7 @@
         &-title {
             line-height: 1;
             margin-bottom: .1em;
-            @include vars.vp-max(35,375, 5.7rem, 'font-size');
+            @include vars.vp-max(35, 375, 5.7rem, 'font-size');
             text-transform: uppercase;
             font-weight: 800;
 
@@ -174,13 +261,14 @@
 
         &-tagline {
             margin: 0 0 1rem;
+            line-height: 1.2;
 
             @include vars.breakpoint('md') {
                 margin-bottom: .75em;
             }
 
-            &-1{
-                @include vars.vp-max(17,375, 2.8rem, 'font-size');
+            &-1 {
+                @include vars.vp-max(17, 375, 2.8rem, 'font-size');
                 font-weight: 500;
 
                 @include vars.breakpoint('md') {
@@ -201,7 +289,7 @@
             }
 
             &-2 {
-                @include vars.vp-max(14,375, 2rem, 'font-size');
+                @include vars.vp-max(14, 375, 2rem, 'font-size');
 
                 @include vars.breakpoint('md') {
                     font-size: 1.74rem;
@@ -240,7 +328,7 @@
             }
 
             .btn {
-                @include vars.vp-max(14,375, 2rem, 'font-size');
+                @include vars.vp-max(14, 375, 2rem, 'font-size');
                 padding: .5em 1em;
 
                 @include vars.breakpoint('md') {
@@ -287,14 +375,56 @@
 // home skills -----------------------------------------------
 .skills-wrap {}
 
-.skills-list {}
+.skills-list {
+    margin: 0 0 40px;
+
+    @include vars.breakpoint('sm') {
+        columns: 2;
+        column-gap: 20px;
+    }
+
+    @include vars.breakpoint('lg') {
+        columns: 3;
+    }
+
+    @include vars.breakpoint('xxl') {
+        columns: 4;
+    }
+}
 
 .skill-bar {
-    &.in-view {}
+    //li
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 10px;
 
-    &__text {}
+    &.in-view {
+        @for $i from 0 through 10 {
+            .width-#{$i} {
+                width: #{$i * 10}+'%';
+            }
+        }
+    }
 
-    &__bar {}
+    &__text {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    &__bar {
+        display: block;
+        width: 0;
+        height: 15px;
+        transition: width .5s ease;
+        break-inside: avoid;
+        background: linear-gradient(135deg,
+                vars.$theme-color-1 0%,
+                vars.$theme-color-3 30%,
+                vars.$theme-color-4 70%,
+                vars.$theme-color-2 100%);
+    }
 }
 
 .developing-skills-list {}
@@ -302,17 +432,55 @@
 
 // about callout ---------------------------------------------
 .fp-about {
+    background-color: vars.$theme-color-1;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
+    &-link {
+        color: vars.$text-color;
+
+        &-wrap {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
 }
 
 // contact cta -----------------------------------------------
 .contact-cta {
-    &-headline {}
+    background-color: vars.$accent;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
-    &-interest {}
+    &-wrap {
+        display: flex;
+        align-items: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-    &-link {}
+    &-content {
+        margin-left: 40px;
+
+        @include vars.breakpoint('lg') {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &-headline {
+        margin: 0;
+
+        @include vars.breakpoint('md') {
+            flex-shrink: 0;
+        }
+    }
+
+    &-interest {
+        margin-right: 20px;
+    }
+
+    &-link {
+        margin-left: auto;
+    }
 }
-
-
-

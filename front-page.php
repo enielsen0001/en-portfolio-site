@@ -67,16 +67,6 @@ if ( $contact_page ) {
             <h2>My Key Skills</h2>
             <?php include( get_template_directory() . '/template-parts/skills-partial.php' ); ?>
 
-            <p>Being a curious person, I genuinely enjoy learning new things and am driven to create quality experiences on the web.</p>
-
-            <h3>Currently Developing Skills</h3>
-
-            <ul class="developing-skills-list list-reset">
-                <li>WordPress Theme Development</li>
-                <li>PHP</li>
-                <li>Node.js</li>
-            </ul>
-
         </section>
 
         <section class="fp-about row">
@@ -85,7 +75,9 @@ if ( $contact_page ) {
 
                 <p>I truly enjoy crafting intuitive and visually appealing digital experiences, and I'm eager to contribute my skills in web development and design, whether collaborating within a team or working independently on freelance projects. My goal is to build impactful and user-centric solutions that not only meet requirements but also delight and engage.</p>
 
-                <a href="<?php esc_url( home_url( '/' . 'about' . '/' ) ); ?>">More About My Journey</a>
+                <div class="fp-about-link-wrap">
+                    <a  class="fp-about-link accent-link" href="<?php esc_url( home_url( '/' . 'about' . '/' ) ); ?>"><span>More About My Journey</span> <i class="fa-solid fa-caret-right"></i></a>
+                </div>
             <div>
         </section>
 

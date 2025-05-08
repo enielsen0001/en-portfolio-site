@@ -42,13 +42,11 @@ $skillsArr = array(
         array('name' => 'Shopify Theme Development', 'level' => 7),
         array('name' => 'Shopify App Development', 'level' => 4),
         array('name' => 'WordPress Theme Development', 'level' => 4),
-        array('name' => 'Salesforce Commerce Cloud', 'level' => 2),
-        array('name' => 'Webflow', 'level' => 1),
+        array('name' => 'Salesforce Commerce Cloud', 'level' => 2)
     ),
     'E' => array(
         array('name' => 'Unit Testing (Jest, Enzyme)', 'level' => 6),
         array('name' => 'Accessibility Best Practices', 'level' => 8),
-        array('name' => 'Code Reviews', 'level' => 8),
         array('name' => 'Agile Development', 'level' => 6),
     ),
 );
@@ -97,5 +95,4 @@ else :
 endif;
 ?>
 
-<a href="/skills" class="button button-primary">See All Skills</a>
 <p>For a comprehensive overview of my technical skills and proficiency, please visit my <a href="/skills">skills page</a>.</p>

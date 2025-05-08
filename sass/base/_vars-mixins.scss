@@ -1,34 +1,26 @@
 $body-font: "Montserrat", sans-serif;
 
-  $text-color: #222222;
-  $theme-color-1: #f8b705;
-  $theme-color-2: #131a48;
-  $theme-color-3: #ff6120;
-  $theme-color-4: #00a6a6;
-  $neutral-bg: #fafafa;
-  $theme-collor-a11y-orange: #cc4700;
+$text-color: #222222;
+$theme-color-1: #f8b705;
+$theme-color-2: #131a48;
+$theme-color-3: #ff6120;
+$theme-color-4: #00a6a6;
+$neutral-bg: #fafafa;
+$accent: #f0f0f0;
+$theme-collor-a11y-orange: #cc4700;
 
-  :root {
-      /* CSS HEX */
-      --text-color: #{$text-color};
-      --neutral-background: #{$neutral-bg};
-      --theme-color-1: #{$theme-color-1};
-      --theme-color-2: #{$theme-color-2};
-      --theme-color-3: #{$theme-color-3};
-      --theme-color-4: #{$theme-color-4};
-  }
+:root {
+    /* CSS HEX */
+    --text-color: #{$text-color};
+    --neutral-background: #{$neutral-bg};
+    --theme-color-1: #{$theme-color-1};
+    --theme-color-2: #{$theme-color-2};
+    --theme-color-3: #{$theme-color-3};
+    --theme-color-4: #{$theme-color-4};
+}
 
 
-  $grid-breakpoints: (
-      xs: 0,
-      sm: 576px,
-      md: 768px,
-      lg: 992px,
-      xl: 1200px,
-      xxl: 1400px
-  );
-
-  $max-width-breakpoints: (
+$grid-breakpoints: (
     xs: 0,
     sm: 576px,
     md: 768px,
@@ -37,101 +29,178 @@ $body-font: "Montserrat", sans-serif;
     xxl: 1400px
 );
 
-  $content-max-widths: (
-      sm: 540px,
-      md: 720px,
-      lg: 960px,
-      xl: 1140px,
-      xxl: 1320px
-  );
+$max-width-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
 
-  @mixin content-max-width($breakpoints: $max-width-breakpoints) {
-      max-width: 100%;
+$content-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
 
-      @each $name, $width in $breakpoints {
-          @if $width !=0 {
+@mixin content-max-width($breakpoints: $max-width-breakpoints) {
+    max-width: 100%;
 
-              // Apply only for breakpoints larger than 0
-              @media (min-width: $width) {
-                  max-width: $width;
-              }
-          }
-      }
-  }
+    @each $name, $width in $breakpoints {
+        @if $width !=0 {
 
-  // Center block
-  @mixin center-block {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-  }
+            // Apply only for breakpoints larger than 0
+            @media (min-width: $width) {
+                max-width: $width;
+            }
+        }
+    }
+}
 
-  // Column width with margin
-  @mixin column-width($numberColumns: 3) {
-      width: map-get($columns, $numberColumns) - (($columns__margin * ($numberColumns - 1)) / $numberColumns );
-  }
+// Center block
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-  @function vw($px-value, $browser-width-px) {
-      @return calc($px-value / $browser-width-px * 100vw);
-  }
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+    width: map-get($columns, $numberColumns) - (($columns__margin * ($numberColumns - 1)) / $numberColumns );
+}
 
-  @mixin vp-max ($px-value, $vp-value, $max-px, $style) {
+@function vw($px-value, $browser-width-px) {
+    @return calc($px-value / $browser-width-px * 100vw);
+}
 
-      $vw: vw($px-value, $vp-value);
-      #{$style}: #{$px-value}px;
-      #{$style}: min($vw, $max-px);
-  }
+@mixin vp-max ($px-value, $vp-value, $max-px, $style) {
 
-  @mixin breakpointmax($break) {
-      @if map-has-key($grid-breakpoints, $break) {
-          $break-value: map-get($grid-breakpoints, $break);
+    $vw: vw($px-value, $vp-value);
+    #{$style}: #{$px-value}px;
+    #{$style}: min($vw, $max-px);
+}
 
-          @media screen and (max-width: #{$break-value - 1px}) {
-              @content;
-          }
-      }
+@mixin breakpointmax($break) {
+    @if map-has-key($grid-breakpoints, $break) {
+        $break-value: map-get($grid-breakpoints, $break);
 
-      @else {
-          @media screen and (max-width: $break) {
-              @content;
-          }
-      }
-  }
+        @media screen and (max-width: #{$break-value - 1px}) {
+            @content;
+        }
+    }
 
-  @mixin breakpoint($break) {
-      @if map-has-key($grid-breakpoints, $break) {
-          $break-value: map-get($grid-breakpoints, $break);
+    @else {
+        @media screen and (max-width: $break) {
+            @content;
+        }
+    }
+}
 
-          @media screen and (min-width: $break-value) {
-              @content;
-          }
-      }
+@mixin breakpoint($break) {
+    @if map-has-key($grid-breakpoints, $break) {
+        $break-value: map-get($grid-breakpoints, $break);
 
-      @else {
-          @media screen and (min-width: $break) {
-              @content;
-          }
-      }
-  }
+        @media screen and (min-width: $break-value) {
+            @content;
+        }
+    }
 
-  @mixin vert-and-center-align {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%, -50%);
-  }
+    @else {
+        @media screen and (min-width: $break) {
+            @content;
+        }
+    }
+}
 
-  @mixin vert-align {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
-  }
+@mixin breakpoint-between($break-start, $break-end, $grid-breakpoints: ()) {
+    $break-value-low: null;
+    $break-value-high: null;
 
-  @mixin center-align {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-  }
+    @if map-has-key($grid-breakpoints, $break-start) {
+        $break-value-low: map-get($grid-breakpoints, $break-start);
+    }
+
+    @else {
+        $break-value-low: $break-start;
+    }
+
+    @if map-has-key($grid-breakpoints, $break-end) {
+        $break-value-high: map-get($grid-breakpoints, $break-end);
+    }
+
+    @else {
+        $break-value-high: $break-end;
+    }
+
+    @if $break-value-low !=null and $break-value-high !=null {
+        @media screen and (min-width: $break-value-low) and (max-width: #{$break-value-high - 1px}) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "One or both breakpoints were not found in \$grid-breakpoints or are not valid pixel values.";
+    }
+}
+
+@mixin vert-and-center-align {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin vert-align {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+@mixin center-align {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin section-margin {
+    margin-bottom: 50px;
+
+    @include breakpoint('md') {
+        margin-bottom: 80px;
+    }
+}
+
+@mixin angle-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+        span {
+            text-decoration: underline;
+        }
+    }
+
+    ;
+
+    span {
+        text-underline-offset: .1em;
+    }
+
+    i {
+        margin-left: .25em;
+    }
+}
+
+.accent-link {
+    @include angle-link;
+}

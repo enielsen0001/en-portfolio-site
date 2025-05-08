@@ -11,7 +11,7 @@
 
 ?>
 
-<footer class="site-footer">
+<footer class="footer">
     <div class="content-width">
 		<div class="footer-top">
 			<div class="footer-logo">
@@ -40,10 +40,10 @@
 			</div>
 		</div>
         <div class="footer-bottom">
-            <p class="footer-copy">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
+            <p class="footer-copy">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>&nbsp;
             <a class="footer-privacy" href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         </div>
-		<p class="footer-to-top"><a  class="footer-to-top-link" href="#top">Back to Top</a></p>
+		<a href="#top" id="back-to-top">Back to Top</a>
     </div>
 </footer>
 
