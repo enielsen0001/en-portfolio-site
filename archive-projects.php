@@ -93,10 +93,6 @@ get_header();
         ?>
         </div>
 
-        <?php
-            include( get_template_directory() . '/template-parts/contact-cta.php' );
-        ?>
-
         </main>
 
 		<?php
@@ -104,5 +100,8 @@ get_header();
 		// if ( is_active_sidebar( 'sidebar-projects-archive' ) ) {
 		// 	get_sidebar( 'projects-archive' ); // Use the 'projects-archive' slug
 		// }
-
+        ?>
+        <?php include( get_template_directory() . '/template-parts/contact-cta.php' ); ?>
+        <?php
 get_footer();
+?>

@@ -490,6 +490,11 @@
 
     &-interest {
         margin-right: 20px;
+        margin-bottom: 1em;
+
+        @include vars.breakpoint('lg') {
+            margin-bottom: 0;
+        }
     }
 
     &-link {
@@ -512,7 +517,7 @@
             display: inline-block;
             position: relative;
             background-color: vars.$neutral-bg;
-            padding: .2em;
+            padding: .2em 0;
             line-height: 1;
 
             @include vars.breakpoint('md') {

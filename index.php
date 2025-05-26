@@ -14,10 +14,11 @@
 
 get_header();
 ?>
+<?php include( get_template_directory() . '/template-parts/page-headline.php' ); ?>
 
+<div class="d-flex-md">
 	<main id="primary" class="site-main">
-	<?php include( get_template_directory() . '/template-parts/page-headline.php' ); ?>
-		<p>index.php</p>
+
 		<?php
 		if ( have_posts() ) :
 
@@ -30,29 +31,73 @@ get_header();
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+            ?>
+            <div class="blog-posts-list content-width"> <?php // Wrapper for your posts ?>
+            <?php
+            while ( have_posts() ) :
+                the_post();
+                ?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-item' ); ?>>
+                    <header class="entry-header">
+                        <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    </header><div class="entry-meta">
+                        <span class="posted-on">
+                            <?php
+                            printf(
+                                /* translators: %s: post date. */
+                                esc_html__( 'Posted on %s', 'en-portfolio-site' ),
+                                '<time datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time>'
+                            );
+                            ?>
+                        </span>
+                        <?php if ( has_category() ) : ?>
+                            <span class="cat-links">
+                                <?php
+                                printf(
+                                    /* translators: %s: list of categories. */
+                                    esc_html__( ' in %s', 'en-portfolio-site' ),
+                                    get_the_category_list( ', ' )
+                                );
+                                ?>
+                            </span>
+                        <?php endif; ?>
+                    </div><div class="entry-content">
+                        <?php the_excerpt(); ?>
+                        <p class="read-more-link"><a href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'en-portfolio-site' ); ?></a></p>
+                    </div><?php if ( has_tag() ) : ?>
+                        <footer class="entry-footer">
+                            <span class="tags-links">
+                                <?php
+                                printf(
+                                    /* translators: %s: list of tags. */
+                                    esc_html__( 'Tagged: %s', 'en-portfolio-site' ),
+                                    get_the_tag_list( '', ', ', '' )
+                                );
+                                ?>
+                            </span>
+                        </footer><?php endif; ?>
+                </article><?php
+            endwhile;
+            ?>
+            </div> <?php // End .blog-posts-list ?>
+            <?php
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+            the_posts_navigation();
 
-			endwhile;
+        else :
 
-			the_posts_navigation();
+            get_template_part( 'template-parts/content', 'none' );
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+        endif;
+        ?>
 
 	</main><!-- #main -->
 
 <?php
 get_sidebar();
+?>
+</div>
+<?php include( get_template_directory() . '/template-parts/contact-cta.php' ); ?>
+<?php
 get_footer();
+?>
