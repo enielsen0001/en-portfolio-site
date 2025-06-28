@@ -103,3 +103,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @use "utilities/alignments";
 
 
+p {
+	color: green;
+
+	span {
+		border: 5px solid pink;
+	}
+}

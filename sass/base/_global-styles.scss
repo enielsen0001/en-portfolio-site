@@ -122,3 +122,29 @@ a:not([class]) {
         background-color: vars.$theme-color-3;
     }
 }
+
+.arrow-link {
+    display: flex;
+    align-items: center;
+    color: vars.$text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+        span {
+            text-decoration: underline;
+        }
+    }
+
+    ;
+
+    span {
+        text-underline-offset: .1em;
+    }
+
+    i {
+        margin-left: .25em;
+    }
+}

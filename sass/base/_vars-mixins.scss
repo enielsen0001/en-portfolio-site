@@ -183,21 +183,27 @@ $content-max-widths: (
     text-transform: uppercase;
     font-weight: 700;
 
+
+    &::after {
+        content: "\f0da";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        margin-left: .25em;
+    }
+
     &:hover,
     &:focus {
         span {
             text-decoration: underline;
         }
+        // Optional: hover effect for the arrow
+        // &::after {
+        //     margin-left: .5em; // Move arrow slightly on hover
+        // }
     }
-
-    ;
 
     span {
         text-underline-offset: .1em;
-    }
-
-    i {
-        margin-left: .25em;
     }
 }
 

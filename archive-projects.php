@@ -14,11 +14,15 @@ get_header();
 
     <header class="page-header">
         <?php include( get_template_directory() . '/template-parts/page-headline.php' ); ?>
-        <?php
+        <div class="content-width">
+            <?php
         the_archive_description( '<div class="archive-description">', '</div>' ); // Outputs the archive description (if set)
         ?>
+        </div>
     </header>
 
+
+    <div class="content-width">
     <div class="project-filter">
         <h2>Filter</h2>
         <?php
@@ -101,6 +105,7 @@ get_header();
 		// 	get_sidebar( 'projects-archive' ); // Use the 'projects-archive' slug
 		// }
         ?>
+        </div>
         <?php include( get_template_directory() . '/template-parts/contact-cta.php' ); ?>
         <?php
 get_footer();

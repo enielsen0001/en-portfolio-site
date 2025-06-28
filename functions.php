@@ -149,6 +149,7 @@ add_action( 'widgets_init', 'en_portfolio_site_widgets_init' );
  * Enqueue scripts and styles.
  */
 function en_portfolio_site_scripts() {
+	wp_enqueue_script('masonry-js', 'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', array(), null, true);
 	wp_enqueue_style( 'en-portfolio-site-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'en-portfolio-site-style', 'rtl', 'replace' );
 
@@ -263,11 +264,11 @@ function display_recent_custom_posts( $custom_post_type ) {
 					// Display categories
 					$categories = get_the_category();
 					if ( $categories && ! is_wp_error( $categories ) ) {
-						echo '<div class="rcp-categories">';
+						echo '<div class="proj-categories">';
 						echo '<span class="sr-only">Categories:</span>';
 						$category_links = array();
 						foreach ( $categories as $category ) {
-							$category_links[] = '<a class="rcp-category" href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag">' . esc_html( $category->name ) . '</a>';
+							$category_links[] = '<a class="proj-category" href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag">' . esc_html( $category->name ) . '</a>';
 						}
 						echo implode( '', $category_links );
 						echo '</div>';
@@ -283,17 +284,17 @@ function display_recent_custom_posts( $custom_post_type ) {
 					// Display tags
 					$tags = get_the_tags();
 					if ( $tags && ! is_wp_error( $tags ) ) {
-						echo '<div class="rcp-tags">';
+						echo '<div class="proj-tags">';
 						echo '<span class="sr-only">Tags:</span>';
 						$tag_links = array();
 						foreach ( $tags as $tag ) {
-							$tag_links[] = '<a class="rcp-tag" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" rel="tag">' . esc_html( $tag->name ) . '</a>';
+							$tag_links[] = '<a class="proj-tag" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" rel="tag">' . esc_html( $tag->name ) . '</a>';
 						}
 						echo implode( '', $tag_links );
 						echo '</div>';
 					}
 
-					echo '<div class="rcp-read-more-link-wrap"><a href="' . esc_url( get_the_permalink() ) . '" class="rcp-read-more-link" aria-label="Read more about ' . esc_attr( get_the_title() ) . '"><span>Read More</span>  <i class="fa-solid fa-caret-right"></i></a></div>';
+					echo '<div class="rcp-read-more-link-wrap"><a href="' . esc_url( get_the_permalink() ) . '" class="rcp-read-more-link accent-link" aria-label="Read more about ' . esc_attr( get_the_title() ) . '"><span>Read More</span></a></div>';
 
 					echo '</article>';
 				}
@@ -325,10 +326,10 @@ function display_recent_blog_posts() {
 	$recent_posts = new WP_Query( $args );
 
 	if ( $recent_posts->have_posts() ) :
-		echo '<div class="rbps">';
+		echo '<div class="rbps grid">';
 		while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 			?>
-			<article class="rbp">
+			<article class="rbp grid-item">
 				<a class="rbp-link rbp-link-bg-<?php echo rand(1, 4); ?>" href="<?php the_permalink(); ?>">
 					<h3 class="rbp-title"><?php the_title(); ?></h3>
 					<div class="rbp-excerpt">
@@ -346,6 +347,7 @@ function display_recent_blog_posts() {
 			<?php
 		endwhile;
 		echo '</div>';
+
 
 		// Link to view all posts
 		echo '<p class="rbp-view-all"><a class="btn btn-filled" href="' . esc_url( get_permalink( get_option( 'page_for_posts' ) ) ) . '">View All Posts</a></p>';

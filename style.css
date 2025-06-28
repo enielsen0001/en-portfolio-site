@@ -65,14 +65,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   text-transform: uppercase;
   font-weight: 700;
 }
+.accent-link::after {
+  content: "\f0da";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-left: 0.25em;
+}
 .accent-link:hover span, .accent-link:focus span {
   text-decoration: underline;
 }
 .accent-link span {
   text-underline-offset: 0.1em;
-}
-.accent-link i {
-  margin-left: 0.25em;
 }
 
 /*--------------------------------------------------------------
@@ -876,6 +879,24 @@ a:not([class]) {
   background-color: #ff6120;
 }
 
+.arrow-link {
+  display: flex;
+  align-items: center;
+  color: #222222;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.arrow-link:hover span, .arrow-link:focus span {
+  text-decoration: underline;
+}
+.arrow-link span {
+  text-underline-offset: 0.1em;
+}
+.arrow-link i {
+  margin-left: 0.25em;
+}
+
 .rcp {
   margin-bottom: 40px;
   border-bottom: #f0f0f0 1px solid;
@@ -931,10 +952,22 @@ a:not([class]) {
 .rcp-title {
   margin-bottom: 0.25em;
 }
-.rcp-categories {
+.rcp-read-more-link {
+  color: #222222;
+}
+.rcp-read-more-link-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+.rcp-view-all {
+  display: flex;
+  justify-content: center;
+}
+
+.proj-categories {
   margin-bottom: 5px;
 }
-.rcp-category {
+.proj-category {
   display: inline-block;
   margin: 0 5px 5px 0;
   background-color: #222222;
@@ -947,10 +980,10 @@ a:not([class]) {
   letter-spacing: 0.07em;
   font-weight: 500;
 }
-.rcp-category:hover, .rcp-category:focus {
+.proj-category:hover, .proj-category:focus {
   text-decoration: underline;
 }
-.rcp-tag {
+.proj-tag {
   color: #222222;
   text-decoration: none;
   background-color: #f8b705;
@@ -958,14 +991,14 @@ a:not([class]) {
   font-weight: 700;
   text-decoration: none;
 }
-.rcp-tag:hover, .rcp-tag:focus {
+.proj-tag:hover, .proj-tag:focus {
   text-decoration: underline;
 }
-.rcp-tag:first-of-type {
+.proj-tag:first-of-type {
   padding: 0.25em 0.5em 0.25em 0.75em;
   position: relative;
 }
-.rcp-tag:last-of-type:after {
+.proj-tag:last-of-type:after {
   content: "";
   display: inline-block;
   width: 1.25em;
@@ -979,12 +1012,12 @@ a:not([class]) {
   z-index: -1;
   pointer-events: none;
 }
-.rcp-tag:not(:first-of-type) {
+.proj-tag:not(:first-of-type) {
   padding: 0.25em 0.5em 0.25em 1.5em;
   position: relative;
   background-color: #f8b705;
 }
-.rcp-tag:not(:first-of-type):before {
+.proj-tag:not(:first-of-type):before {
   content: "";
   display: inline-block;
   width: 1.25em;
@@ -999,76 +1032,15 @@ a:not([class]) {
   transform: translate(0, -50%) rotate(45deg);
   pointer-events: none;
 }
-.rcp-tags {
+.proj-tags {
   margin-bottom: 8px;
-}
-.rcp-read-more-link {
-  display: flex;
-  align-items: center;
-  color: #222222;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.rcp-read-more-link:hover span, .rcp-read-more-link:focus span {
-  text-decoration: underline;
-}
-.rcp-read-more-link span {
-  text-underline-offset: 0.1em;
-}
-.rcp-read-more-link i {
-  margin-left: 0.25em;
-}
-.rcp-read-more-link-wrap {
-  display: flex;
-  justify-content: flex-end;
-}
-.rcp-view-all {
-  display: flex;
-  justify-content: center;
 }
 
 .rbp {
-  padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   background-color: #f9f9f9;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  grid-column: 1;
-  grid-row: auto;
-}
-@media screen and (min-width: 768px) {
-  .rbp:nth-child(1) {
-    grid-column: 1/span 2;
-    grid-row: 1;
-  }
-  .rbp:nth-child(2) {
-    grid-column: 3;
-    grid-row: 1/span 2;
-  }
-  .rbp:nth-child(3) {
-    grid-column: 1;
-    grid-row: 2/span 2;
-  }
-  .rbp:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .rbp:nth-child(5) {
-    grid-column: 2/span 2;
-    grid-row: 3;
-  }
-}
-.rbps {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 1rem;
-}
-@media screen and (min-width: med) {
-  .rbps {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 .rbp-link {
   display: block;
@@ -1568,6 +1540,9 @@ a:not([class]) {
 .fp-about-link-wrap {
   display: flex;
   justify-content: flex-end;
+}
+.fp-about p {
+  font-weight: 500;
 }
 
 .contact-cta {
@@ -2102,6 +2077,13 @@ a:not([class]) {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5em;
+}
+
+p {
+  color: green;
+}
+p span {
+  border: 5px solid pink;
 }
 
 /*# sourceMappingURL=style.css.map */
