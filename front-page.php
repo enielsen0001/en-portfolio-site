@@ -76,7 +76,7 @@ if ( $contact_page ) {
                 <p>I truly enjoy crafting intuitive and visually appealing digital experiences, and I'm eager to contribute my skills in web development and design, whether collaborating within a team or working independently on freelance projects. My goal is to build impactful and user-centric solutions that not only meet requirements but also delight and engage.</p>
 
                 <div class="fp-about-link-wrap">
-                    <a  class="fp-about-link accent-link" href="<?php esc_url( home_url( '/' . 'about' . '/' ) ); ?>"><span>More About My Journey</span> <i class="fa-solid fa-caret-right"></i></a>
+                    <a  class="fp-about-link accent-link" href="<?php esc_url( home_url( '/' . 'about' . '/' ) ); ?>"><span>More About My Journey</span></a>
                 </div>
             <div>
         </section>

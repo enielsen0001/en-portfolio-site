@@ -425,17 +425,27 @@
         font-weight: 500;
     }
 
-    &__bar {
+    &__bar-wrap {
         display: block;
-        width: 0;
-        height: 15px;
-        transition: width .5s ease;
-        break-inside: avoid;
+        height: 25px;
         background: linear-gradient(135deg,
                 vars.$theme-color-1 0%,
                 vars.$theme-color-3 30%,
                 vars.$theme-color-4 70%,
                 vars.$theme-color-2 100%);
+        break-inside: avoid;
+        position: relative;
+    }
+
+    &__bar {
+        display: block;
+        width: 100%;
+        position: absolute;
+        transition: width .5s ease;
+        background-color: vars.$neutral-bg;
+        height: 100%;
+        top: 0;
+        right: 0;
     }
 }
 

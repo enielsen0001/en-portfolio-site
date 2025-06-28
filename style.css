@@ -1037,51 +1037,63 @@ a:not([class]) {
 }
 
 .rbp {
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.rbp-link {
-  display: block;
-  color: #222222;
-  text-decoration: none;
-  padding: 20px 20px 50px;
-  border-radius: 3px;
   width: 100%;
-  height: 100%;
-  position: relative;
-  transition: box-shadow 0.2s ease-in-out;
+  margin-bottom: 20px;
+  display: flex;
 }
-.rbp-link:hover, .rbp-link:focus {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+@media screen and (min-width: 768px) {
+  .rbp {
+    width: calc(50% - 15px);
+  }
 }
-.rbp-link:hover span > span, .rbp-link:focus span > span {
-  text-decoration: underline;
+.rbps {
+  margin-bottom: 20px;
 }
-.rbp-link-bg-1 {
-  background-color: #f8b705;
+@media screen and (min-width: 768px) {
+  .rbps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
-.rbp-link-bg-2 {
-  background-color: #131a48;
-  color: #fff;
+.rbp-content {
+  flex: 1 1 auto;
 }
-.rbp-link-bg-3 {
-  background-color: #ff6120;
-}
-.rbp-link-bg-4 {
-  background-color: #00a6a6;
+.rbp-read-more-link {
+  flex-shrink: 0;
+  justify-self: flex-end;
+  color: #222222;
 }
 .rbp-read-more-link-wrap {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 .rbp-view-all {
   display: flex;
   justify-content: center;
 }
 
+.post-date-square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ff6120;
+  color: white;
+  font-weight: 600;
+  padding: 5px;
+  min-width: 83px;
+  margin-right: 15px;
+}
+.post-date-square .post-month {
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.post-date-square .post-day {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
 #back-to-top {
   display: none;
   position: fixed;
@@ -1520,13 +1532,22 @@ a:not([class]) {
   font-size: 1.2rem;
   font-weight: 500;
 }
+.skill-bar__bar-wrap {
+  display: block;
+  height: 25px;
+  background: linear-gradient(135deg, #f8b705 0%, #ff6120 30%, #00a6a6 70%, #131a48 100%);
+  break-inside: avoid;
+  position: relative;
+}
 .skill-bar__bar {
   display: block;
-  width: 0;
-  height: 15px;
+  width: 100%;
+  position: absolute;
   transition: width 0.5s ease;
-  break-inside: avoid;
-  background: linear-gradient(135deg, #f8b705 0%, #ff6120 30%, #00a6a6 70%, #131a48 100%);
+  background-color: #fafafa;
+  height: 100%;
+  top: 0;
+  right: 0;
 }
 
 .fp-about {
@@ -2077,13 +2098,6 @@ a:not([class]) {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5em;
-}
-
-p {
-  color: green;
-}
-p span {
-  border: 5px solid pink;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -80,7 +80,9 @@ if ( ! empty( $skillsArr ) && is_array( $skillsArr ) ) :
                     <li class="skill-bar watch-in-view">
                         <span class="skill-bar__text"><?php echo esc_html( $name ); ?></span>
                         <span class="sr-only"> proficiency <?php echo esc_html( $percentVal ); ?> percent</span>
-                        <div class="skill-bar__bar width-<?php echo esc_attr( $level ); ?>"></div>
+                        <span class="skill-bar__bar-wrap">
+                            <span class="skill-bar__bar width-<?php echo esc_attr( 10 - $level ); ?>"></span>
+                        </span>
                     </li>
                 <?php endforeach; ?>
             </ul>

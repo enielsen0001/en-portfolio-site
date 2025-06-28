@@ -326,23 +326,43 @@ function display_recent_blog_posts() {
 	$recent_posts = new WP_Query( $args );
 
 	if ( $recent_posts->have_posts() ) :
-		echo '<div class="rbps grid">';
+		echo '<div class="rbps">';
 		while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
+		$post_date = get_the_date( 'F j, Y' );
+		$date_parts = explode( ' ', $post_date );
 			?>
-			<article class="rbp grid-item">
-				<a class="rbp-link rbp-link-bg-<?php echo rand(1, 4); ?>" href="<?php the_permalink(); ?>">
-					<h3 class="rbp-title"><?php the_title(); ?></h3>
-					<div class="rbp-excerpt">
-						<?php the_excerpt(); ?>
-					</div>
+			<article class="rbp">
+				<div class="post-date-square">
+				<?php
+				if ( count( $date_parts ) >= 3 ) {
+					$month = $date_parts[0];
+					$day = rtrim( $date_parts[1], ',' ); // Remove the trailing comma from the day
+					$year = $date_parts[2];
 
+					echo '<span class="post-month">' . esc_html( $month ) . '</span> ';
+					echo '<span class="post-day">' . esc_html( $day ) . '</span> ';
+					echo '<span class="post-year">' . esc_html( $year ) . '</span>';
+				} else {
+					// Handle cases where the date format might be unexpected
+					echo esc_html( $post_date );
+				}
+				?>
+				</div>
+				<div class="rbp-content">
+					<h3 class="rbp-title"><?php the_title(); ?></h3>
+					<?php
+					if ( has_excerpt() ) {
+						echo '<div class="rbp-excerpt">';
+						the_excerpt();
+						echo '</div>';
+					}
+					?>
 					<div class="rbp-read-more-link-wrap">
-						<span class="rbp-read-more-link accent-link">
+						<a class="rbp-read-more-link accent-link">
 							<span>Read More</span>
-							<i class="fa-solid fa-caret-right"></i>
-						</span>
+						</a>
 					</div>
-				</a>
+				</div>
 			</article>
 			<?php
 		endwhile;
