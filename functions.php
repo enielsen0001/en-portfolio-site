@@ -301,7 +301,7 @@ function display_recent_custom_posts( $custom_post_type ) {
 				echo '</div>';
 				wp_reset_postdata(); // IMPORTANT: Restore original post data
 
-				echo '<p class="rcp-view-all"><a class="btn btn-filled" href="' . esc_url( get_permalink( get_option( 'page_for_posts' ) ) ) . '">View All Projects</a></p>';
+				echo '<p class="rcp-view-all"><a class="btn btn-filled" href="' . esc_url( get_post_type_archive_link( 'projects' ) ) . '">View All Projects</a></p>';
 
 
 			} else {

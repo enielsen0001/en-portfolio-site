@@ -208,14 +208,35 @@
 
 	.nav-links {
 		display: flex;
+		justify-content: center;
+
+		div {
+			padding: 10px 20px;
+		}
+
+		a {
+			color: vars.$text-color;
+			text-underline-offset: .1em;
+
+			&:hover, &:focus {
+				text-decoration: underline;
+
+				&:after, &:before {
+					text-decoration: none;
+				}
+			}
+		}
 	}
 
 	.nav-previous {
-		flex: 1 0 50%;
+		a {
+			@include vars.angle-link-prev;
+		}
 	}
 
 	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
+		a {
+			@include vars.angle-link;
+		}
 	}
 }

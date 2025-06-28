@@ -1872,17 +1872,94 @@ a:not([class]) {
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
   display: flex;
+  justify-content: center;
 }
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  flex: 1 0 50%;
+.comment-navigation .nav-links div,
+.posts-navigation .nav-links div,
+.post-navigation .nav-links div {
+  padding: 10px 20px;
 }
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  text-align: end;
-  flex: 1 0 50%;
+.comment-navigation .nav-links a,
+.posts-navigation .nav-links a,
+.post-navigation .nav-links a {
+  color: #222222;
+  text-underline-offset: 0.1em;
+}
+.comment-navigation .nav-links a:hover, .comment-navigation .nav-links a:focus,
+.posts-navigation .nav-links a:hover,
+.posts-navigation .nav-links a:focus,
+.post-navigation .nav-links a:hover,
+.post-navigation .nav-links a:focus {
+  text-decoration: underline;
+}
+.comment-navigation .nav-links a:hover:after, .comment-navigation .nav-links a:hover:before, .comment-navigation .nav-links a:focus:after, .comment-navigation .nav-links a:focus:before,
+.posts-navigation .nav-links a:hover:after,
+.posts-navigation .nav-links a:hover:before,
+.posts-navigation .nav-links a:focus:after,
+.posts-navigation .nav-links a:focus:before,
+.post-navigation .nav-links a:hover:after,
+.post-navigation .nav-links a:hover:before,
+.post-navigation .nav-links a:focus:after,
+.post-navigation .nav-links a:focus:before {
+  text-decoration: none;
+}
+.comment-navigation .nav-previous a,
+.posts-navigation .nav-previous a,
+.post-navigation .nav-previous a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.comment-navigation .nav-previous a::before,
+.posts-navigation .nav-previous a::before,
+.post-navigation .nav-previous a::before {
+  content: "\f0d9";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 0.25em;
+}
+.comment-navigation .nav-previous a:hover span, .comment-navigation .nav-previous a:focus span,
+.posts-navigation .nav-previous a:hover span,
+.posts-navigation .nav-previous a:focus span,
+.post-navigation .nav-previous a:hover span,
+.post-navigation .nav-previous a:focus span {
+  text-decoration: underline;
+}
+.comment-navigation .nav-previous a span,
+.posts-navigation .nav-previous a span,
+.post-navigation .nav-previous a span {
+  text-underline-offset: 0.1em;
+}
+.comment-navigation .nav-next a,
+.posts-navigation .nav-next a,
+.post-navigation .nav-next a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.comment-navigation .nav-next a::after,
+.posts-navigation .nav-next a::after,
+.post-navigation .nav-next a::after {
+  content: "\f0da";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-left: 0.25em;
+}
+.comment-navigation .nav-next a:hover span, .comment-navigation .nav-next a:focus span,
+.posts-navigation .nav-next a:hover span,
+.posts-navigation .nav-next a:focus span,
+.post-navigation .nav-next a:hover span,
+.post-navigation .nav-next a:focus span {
+  text-decoration: underline;
+}
+.comment-navigation .nav-next a span,
+.posts-navigation .nav-next a span,
+.post-navigation .nav-next a span {
+  text-underline-offset: 0.1em;
 }
 
 /* Posts and pages

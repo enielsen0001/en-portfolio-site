@@ -32,7 +32,7 @@ get_header();
         ) );
 
         if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-            echo '<ul>';
+            echo '<ul class="filters-list">';
             echo '<li><a href="' . esc_url( get_post_type_archive_link( 'projects' ) ) . '">All Categories</a></li>'; // Link to show all projects
             foreach ( $terms as $term ) {
                 echo '<li><a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $term->name ) . '</a></li>';
@@ -42,7 +42,7 @@ get_header();
         ?>
     </div><?php if ( have_posts() ) : ?>
 
-        <div class="project-grid">
+        <div class="projects-archive-list">
             <?php
             /* Start the Loop */
             while ( have_posts() ) :
