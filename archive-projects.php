@@ -31,13 +31,25 @@ get_header();
             'hide_empty' => true, // Only show categories with posts
         ) );
 
-        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+        if (!empty($terms) && !is_wp_error($terms)) {
             echo '<ul class="filters-list">';
-            echo '<li><a href="' . esc_url( get_post_type_archive_link( 'projects' ) ) . '">All Categories</a></li>'; // Link to show all projects
-            foreach ( $terms as $term ) {
-                echo '<li><a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $term->name ) . '</a></li>';
+            echo '<li><a href="' . esc_url(get_post_type_archive_link('projects')) . '">All Categories</a></li>';
+            foreach ($terms as $term) {
+                $projects_archive_base_url = get_post_type_archive_link('projects'); //
+
+                if ($projects_archive_base_url) {
+                    $link_url = add_query_arg('project-type', $term->slug, $projects_archive_base_url);
+
+                    echo '<li>';
+                    echo '<a href="' . esc_url($link_url) . '">';
+                    echo esc_html($term->name);
+                    echo '</a>';
+                    echo '</li>';
+                } else {
+
+                    echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . ' (Fallback - general category archive)</a></li>';
+                }
             }
-            echo '</ul>';
         }
         ?>
     </div><?php if ( have_posts() ) : ?>
