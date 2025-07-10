@@ -1,3 +1,5 @@
+@use '../../base/vars-mixins' as vars;
+
 .sticky {
 	display: block;
 }

@@ -253,6 +253,181 @@
 
 
 // projects list -----------------------------------------
+.filters-hl {
+	font-size: 1.8rem;
+	margin-bottom: .5em;
+}
+
+.filters-list {
+	margin: 0 0 40px;
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+
+	li {
+		margin: 0 10px 10px 0;
+	}
+
+	a {
+		display: inline-block;
+		padding: 5px 10px;
+		text-decoration: none;
+		text-transform: uppercase;
+		background-color: vars.$text-color;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 500;
+		letter-spacing: 2px;
+        text-underline-offset: .2em;
+
+		&:hover, &:focus {
+			text-decoration: underline;
+
+		}
+	}
+}
+
+.projects-archive-list {
+    article {
+        display: flex;
+        flex-direction: column;
+
+        padding: 30px 0;
+
+        border-bottom: 1px solid vars.$accent;
+
+        @include vars.breakpoint('sm') {
+            flex-direction: row;
+        }
+
+        .entry-featured-image{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+
+            @include vars.breakpoint('sm') {
+                width: 33%;
+                max-width: 250px;
+                margin: 0 20px 0 0;
+                flex-shrink: 0;
+            }
+            a {
+                display: block;
+                width: 100%;
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .header-text-wrap {
+            flex-grow: 1;
+
+            @include vars.breakpoint('lg') {
+                margin-right: 20px;
+            }
+        }
+
+        .proj-categories {
+            display: block;
+            margin-right: 20px;
+        }
+
+        .header-text-cta-wrap {
+            @include vars.breakpoint('lg') {
+                display: flex;
+                align-items: center;
+                flex-grow: 1;
+            }
+        }
+
+        .entry-header {
+
+        }
+
+        .entry-title {
+            margin: 0;
+
+            a {
+                text-decoration: none;
+                text-underline-offset: 4px;
+                color: vars.$text-color;
+                font-weight: 500;
+
+                &:hover, &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .entry-meta {
+            line-height: 1.2;
+        }
+
+        .posted-on {
+            a {
+                text-decoration: none;
+                text-underline-offset: 2px;
+                color: vars.$text-color;
+                font-style: italic;
+                font-size: 1.4rem;
+                color: vars.$light-gray;
+
+                &:hover, &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .entry-date {}
+
+        .cat-links {}
+
+        .entry-summary {
+            p{}
+        }
+
+        .entry-footer {
+            a {
+                color: vars.$text-color;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.proj-archive-cat-tags-wrap {
+    margin-bottom: 30px;
+
+    @include vars.breakpoint('md') {
+        display: flex;
+    }
+
+    @include vars.breakpoint('lg') {
+        margin-bottom: 0;
+    }
+}
+
+    .proj-archive-tag {
+        display: block;
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        color: vars.$theme-collor-a11y-orange;
+        font-size: 1.4rem;
+        text-underline-offset: 2px;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+
+        &s {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+
+
 
 
 

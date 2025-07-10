@@ -724,6 +724,10 @@ body {
   font-size: 1.6rem;
 }
 
+.site-main {
+  margin-bottom: 50px;
+}
+
 .sr-only {
   position: absolute;
   left: -10000px;
@@ -1094,6 +1098,147 @@ a:not([class]) {
   font-weight: 700;
   line-height: 1;
 }
+.filters-hl {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+.filters-list {
+  margin: 0 0 40px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.filters-list li {
+  margin: 0 10px 10px 0;
+}
+.filters-list a {
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #222222;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-underline-offset: 0.2em;
+}
+.filters-list a:hover, .filters-list a:focus {
+  text-decoration: underline;
+}
+
+.projects-archive-list article {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+@media screen and (min-width: 576px) {
+  .projects-archive-list article {
+    flex-direction: row;
+  }
+}
+.projects-archive-list article .entry-featured-image {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 576px) {
+  .projects-archive-list article .entry-featured-image {
+    width: 33%;
+    max-width: 250px;
+    margin: 0 20px 0 0;
+    flex-shrink: 0;
+  }
+}
+.projects-archive-list article .entry-featured-image a {
+  display: block;
+  width: 100%;
+}
+.projects-archive-list article .entry-featured-image a img {
+  object-fit: cover;
+}
+.projects-archive-list article .header-text-wrap {
+  flex-grow: 1;
+}
+@media screen and (min-width: 992px) {
+  .projects-archive-list article .header-text-wrap {
+    margin-right: 20px;
+  }
+}
+.projects-archive-list article .proj-categories {
+  display: block;
+  margin-right: 20px;
+}
+@media screen and (min-width: 992px) {
+  .projects-archive-list article .header-text-cta-wrap {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+.projects-archive-list article .entry-title {
+  margin: 0;
+}
+.projects-archive-list article .entry-title a {
+  text-decoration: none;
+  text-underline-offset: 4px;
+  color: #222222;
+  font-weight: 500;
+}
+.projects-archive-list article .entry-title a:hover, .projects-archive-list article .entry-title a:focus {
+  text-decoration: underline;
+}
+.projects-archive-list article .entry-meta {
+  line-height: 1.2;
+}
+.projects-archive-list article .posted-on a {
+  text-decoration: none;
+  text-underline-offset: 2px;
+  color: #222222;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #777;
+}
+.projects-archive-list article .posted-on a:hover, .projects-archive-list article .posted-on a:focus {
+  text-decoration: underline;
+}
+.projects-archive-list article .entry-footer a {
+  color: #222222;
+  white-space: nowrap;
+}
+
+.proj-archive-cat-tags-wrap {
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .proj-archive-cat-tags-wrap {
+    display: flex;
+  }
+}
+@media screen and (min-width: 992px) {
+  .proj-archive-cat-tags-wrap {
+    margin-bottom: 0;
+  }
+}
+
+.proj-archive-tag {
+  display: block;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  color: #cc4700;
+  font-size: 1.4rem;
+  text-underline-offset: 2px;
+}
+.proj-archive-tag:hover, .proj-archive-tag:focus {
+  text-decoration: underline;
+}
+.proj-archive-tags {
+  display: flex;
+  align-items: center;
+}
+
 #back-to-top {
   display: none;
   position: fixed;
