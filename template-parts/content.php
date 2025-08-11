@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<!-- <header class="entry-header">
+	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -27,9 +27,11 @@
 				?>
 			</div>
 		<?php endif; ?>
-	</header> -->
+	</header>
 
-	<?php en_portfolio_site_post_thumbnail(); ?>
+	<?php
+	// en_portfolio_site_post_thumbnail();
+	?>
 
 	<div class="entry-content">
 		<?php

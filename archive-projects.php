@@ -105,11 +105,11 @@ get_header();
 
                                     $tags = get_the_tags();
                                     if ( $tags && ! is_wp_error( $tags ) ) {
-                                        echo '<div class="proj-archive-tags">';
+                                        echo '<div class="proj-tags">';
                                         echo '<span class="sr-only">Tags:</span>';
                                         $tag_links = array();
                                         foreach ( $tags as $tag ) {
-                                            $tag_links[] = '<a class="proj-archive-tag" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" rel="tag"><span aria-hidden="true">#</span>' . esc_html( $tag->name ) . '</a>';
+                                            $tag_links[] = '<a class="proj-tag" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" rel="tag"><span aria-hidden="true">#</span>' . esc_html( $tag->name ) . '</a>';
                                         }
                                         echo implode( '', $tag_links );
                                         echo '</div>';
